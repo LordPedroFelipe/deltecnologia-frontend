@@ -48,22 +48,23 @@
   gap: 0.12rem;
   min-width: 0;
   line-height: 1;
+  font-family: var(--font-ui);
 }
 
 .brand__eyebrow {
   color: var(--color-accent);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .brand__title-row strong {
   color: var(--color-title);
-  font-family: var(--font-display);
-  font-size: 1.32rem;
+  font-family: var(--font-ui);
+  font-size: 1.28rem;
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.045em;
 }
 
 .header__nav {
@@ -88,8 +89,10 @@
   padding: 0 0.95rem;
   color: var(--color-text-muted);
   border: 1px solid transparent;
-  font-size: 0.93rem;
-  font-weight: 700;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   white-space: nowrap;
   transition:
     color 180ms ease,
@@ -126,8 +129,10 @@
   padding: 0 1rem;
   border-radius: 0;
   box-shadow: none;
-  font-size: 0.92rem;
-  font-weight: 700;
+  font-family: var(--font-ui);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .header__login {
@@ -176,6 +181,6 @@
   }
 
   .brand__title-row strong {
-    font-size: 1.08rem;
+    font-size: 1rem;
   }
 }

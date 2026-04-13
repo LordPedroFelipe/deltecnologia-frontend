@@ -114,9 +114,10 @@
 
 .layout__sidenav-header h2 {
   margin: 0.85rem 0 0.45rem;
-  font-family: var(--font-display);
-  font-size: 1.85rem;
-  letter-spacing: -0.03em;
+  font-family: var(--font-ui);
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
 }
 
 .layout__sidenav-header p {
@@ -131,8 +132,10 @@
   gap: 0.45rem;
   margin-top: 0.85rem;
   color: var(--color-text-muted);
+  font-family: var(--font-ui);
   font-size: 0.76rem;
-  letter-spacing: 0.08em;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -175,9 +178,10 @@
 }
 
 .layout__mobile-link :is(.mdc-list-item__primary-text, [matListItemTitle]) {
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .layout__mobile-link .mat-icon {
@@ -223,7 +227,10 @@
   min-height: 48px;
   border-radius: 0;
   box-shadow: none;
-  font-weight: 700;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .layout__mobile-login {
@@ -261,7 +268,9 @@
 .layout__sidenav-meta strong {
   margin-bottom: 0.3rem;
   color: var(--color-title);
+  font-family: var(--font-ui);
   font-size: 0.86rem;
+  font-weight: 600;
 }
 
 .layout__sidenav-meta a {
