@@ -1,23 +1,30 @@
 <section class="section-block">
   <div class="page-shell">
     <app-section-title
-      eyebrow="Servicos"
+      eyebrow="Serviços"
       [title]="title"
       [description]="description"
     ></app-section-title>
 
     <div class="services__spotlight surface-panel" appScrollReveal appScrollRevealOrigin="up">
       <div class="services__spotlight-copy">
-        <span class="eyebrow">Execucao especializada</span>
-        <h3>Uma operacao desenhada para manter o parque tecnologico previsivel, seguro e produtivo.</h3>
+        <span class="eyebrow">Execução especializada</span>
+        <h3>Uma operação desenhada para manter o parque tecnológico previsível, seguro e produtivo.</h3>
         <p>
-          As imagens e a composicao desta secao reforcam o posicionamento da Del como parceira tecnica de alto nivel,
-          com visao estruturada para manutencao, inventario, governanca e evolucao tecnologica.
+          As imagens e a composição desta seção reforçam o posicionamento da Del como parceira técnica de alto nível,
+          com visão estruturada para manutenção, inventário, governança e evolução tecnológica.
         </p>
       </div>
 
       <div class="services__spotlight-media">
-        <img [src]="spotlightImagePath" alt="Equipe e recursos da Del Tecnologia atuando em servicos tecnicos e engenharia clinica.">
+        <img
+          [ngSrc]="spotlightImagePath"
+          alt="Equipe e recursos da Del Tecnologia atuando em serviços técnicos e engenharia clínica."
+          width="1536"
+          height="1024"
+          sizes="(max-width: 1024px) 92vw, 36vw"
+          loading="lazy"
+        >
       </div>
     </div>
 
@@ -35,7 +42,7 @@
 
     @if (showCta) {
       <div class="services__cta" appScrollReveal [appScrollRevealDelay]="120">
-        <a mat-stroked-button routerLink="/servicos">Ver portfolio completo</a>
+        <a mat-stroked-button class="services__cta-button" routerLink="/servicos">Ver portfólio completo</a>
       </div>
     }
   </div>

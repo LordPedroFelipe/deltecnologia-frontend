@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -7,7 +8,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
 
 @Component({
   selector: 'app-quick-contact-section',
-  imports: [MatCardModule, MatIconModule, SectionTitleComponent, ScrollRevealDirective],
+  imports: [NgOptimizedImage, MatCardModule, MatIconModule, SectionTitleComponent, ScrollRevealDirective],
   templateUrl: './quick-contact-section.component.html',
   styleUrl: './quick-contact-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

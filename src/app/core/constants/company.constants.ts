@@ -7,7 +7,7 @@ export const COMPANY_INFO = {
   phone: '(47) 2033-7935',
   whatsapp: '(47) 99102-7428',
   email: 'contato@deltecnologia.com',
-  address: 'Rua José Pereira Liberato, 987, Sala 111 e 112 – Itajaí/SC',
+  address: 'Rua José Pereira Liberato, 987, Sala 111 e 112 - Itajaí/SC',
   whatsappUrl: 'https://wa.me/5547991027428',
   phoneUrl: 'tel:+554720337935',
   emailUrl: 'mailto:contato@deltecnologia.com'

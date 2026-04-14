@@ -34,7 +34,7 @@ export class AuthService {
     const normalizedEmail = request.email.trim().toLowerCase();
 
     if (!normalizedEmail.includes('@') || request.password.length < 8) {
-      return throwError(() => new Error('Credenciais invalidas.'));
+      return throwError(() => new Error('Credenciais inválidas.'));
     }
 
     return of(request).pipe(
@@ -53,7 +53,7 @@ export class AuthService {
       request.password !== request.confirmPassword ||
       !request.acceptTerms
     ) {
-      return throwError(() => new Error('Nao foi possivel concluir o cadastro.'));
+      return throwError(() => new Error('Não foi possível concluir o cadastro.'));
     }
 
     return of(request).pipe(
@@ -62,14 +62,14 @@ export class AuthService {
         id: 'mock-register-' + Date.now().toString(36),
         onboardingStatus: 'pending',
         message:
-          'Cadastro recebido com sucesso. Nossa equipe fara a validacao inicial para liberar os proximos passos.'
+          'Cadastro recebido com sucesso. Nossa equipe fará a validação inicial para liberar os próximos passos.'
       }))
     );
   }
 
   startPasswordReset(request: PasswordResetRequest): Observable<PasswordResetChallenge> {
     if (!request.email.includes('@') || request.company.trim().length < 2) {
-      return throwError(() => new Error('Dados invalidos para recuperacao.'));
+      return throwError(() => new Error('Dados inválidos para recuperação.'));
     }
 
     return of(request).pipe(
@@ -94,17 +94,17 @@ export class AuthService {
       request.password.length < 8 ||
       request.password !== request.confirmPassword
     ) {
-      return throwError(() => new Error('Nao foi possivel validar a redefinicao.'));
+      return throwError(() => new Error('Não foi possível validar a redefinição.'));
     }
 
     if (request.verificationCode !== AuthService.mockVerificationCode) {
-      return throwError(() => new Error('Codigo de verificacao invalido.'));
+      return throwError(() => new Error('Código de verificação inválido.'));
     }
 
     return of(request).pipe(
       delay(1200),
       map(() => ({
-        message: 'Senha redefinida com sucesso. Seu acesso ja pode ser retomado.'
+        message: 'Senha redefinida com sucesso. Seu acesso já pode ser retomado.'
       })),
       tap(() => this.resetChallengeState.set(null))
     );
@@ -152,7 +152,7 @@ export class AuthService {
     if (/(admin|diretoria|gestao|executivo)/.test(localPart)) {
       return {
         role: AuthRole.Admin,
-        roleLabel: 'Gestao executiva',
+        roleLabel: 'Gestão executiva',
         permissions: [
           PortalPermission.ViewOverview,
           PortalPermission.ViewOperations,
@@ -180,7 +180,7 @@ export class AuthService {
 
     return {
       role: AuthRole.Operator,
-      roleLabel: 'Operacao tecnica',
+      roleLabel: 'Operação técnica',
       permissions: [
         PortalPermission.ViewOverview,
         PortalPermission.ViewOperations,

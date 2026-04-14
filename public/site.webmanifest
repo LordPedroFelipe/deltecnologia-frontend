@@ -1,0 +1,21 @@
+{
+  "name": "Del Tecnologia - Engenharia Clínica",
+  "short_name": "Del Tecnologia",
+  "description": "Soluções em engenharia clínica, tecnologia médica e gestão de ativos eletromédicos.",
+  "start_url": "/deltecnologia-frontend/",
+  "display": "standalone",
+  "background_color": "#091a33",
+  "theme_color": "#0d5cab",
+  "icons": [
+    {
+      "src": "assets/images/del-02.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/del-02.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

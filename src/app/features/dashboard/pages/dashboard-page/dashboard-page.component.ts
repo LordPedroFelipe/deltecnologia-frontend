@@ -56,9 +56,11 @@ export class DashboardPageComponent {
 
   constructor() {
     this.seoService.updatePage({
-      title: 'Portal Del | Visao geral',
+      title: 'Portal Del | Visão geral',
       description:
-        'Dashboard executivo do portal Del Tecnologia com indicadores, atalhos por perfil e acompanhamento operacional.'
+        'Dashboard executivo do portal Del Tecnologia com indicadores, atalhos por perfil e acompanhamento operacional.',
+      path: '/area-del/visao-geral',
+      noindex: true
     });
   }
 }

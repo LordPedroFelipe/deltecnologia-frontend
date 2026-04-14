@@ -1,0 +1,40 @@
+<section class="section-block equipment-highlights">
+  <div class="page-shell">
+    <div class="equipment-highlights__hero surface-panel" appScrollReveal appScrollRevealOrigin="up">
+      <div class="equipment-highlights__copy">
+        <app-section-title
+          eyebrow="Equipamentos em destaque"
+          title="Atuação técnica em ativos estratégicos para diagnóstico, monitorização e suporte à vida."
+          description="A Del Tecnologia trabalha com equipamentos críticos para a rotina hospitalar, apoiando disponibilidade, segurança e previsibilidade operacional em diferentes frentes assistenciais."
+        ></app-section-title>
+      </div>
+
+      <div class="equipment-highlights__summary">
+        <div>
+          <strong>6 frentes críticas</strong>
+          <span>Equipamentos com alta relevância clínica e operacional.</span>
+        </div>
+        <div>
+          <strong>Leitura consultiva</strong>
+          <span>Manutenção, conformidade e governança técnica em cada ativo.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="equipment-highlights__grid">
+      @for (item of items; track item.title) {
+        <mat-card class="equipment-card" appearance="outlined" appScrollReveal appScrollRevealOrigin="scale">
+          <div class="equipment-card__topline">
+            <span class="equipment-card__group">{{ item.group }}</span>
+            <div class="equipment-card__icon" [style.--accent]="item.accent ?? 'var(--color-primary)'">
+              <mat-icon>{{ item.icon }}</mat-icon>
+            </div>
+          </div>
+
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </mat-card>
+      }
+    </div>
+  </div>
+</section>

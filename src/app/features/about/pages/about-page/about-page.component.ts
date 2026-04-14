@@ -25,7 +25,16 @@ export class AboutPageComponent implements OnInit {
     this.seoService.updatePage({
       title: 'Sobre a Del Tecnologia',
       description:
-        'Conheça o posicionamento da Del Tecnologia em engenharia clínica, inovação, segurança e eficiência operacional.'
+        'Conheça o posicionamento da Del Tecnologia em engenharia clínica, inovação, segurança e eficiência operacional.',
+      path: '/sobre',
+      keywords: ['sobre del tecnologia', 'engenharia clínica hospitalar', 'gestão técnica hospitalar'],
+      structuredData: [
+        this.seoService.createProfessionalServiceSchema('/sobre'),
+        this.seoService.createBreadcrumbSchema([
+          { name: 'Início', path: '/' },
+          { name: 'Sobre', path: '/sobre' }
+        ])
+      ]
     });
   }
 }

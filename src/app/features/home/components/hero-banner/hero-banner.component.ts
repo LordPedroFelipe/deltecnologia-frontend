@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
@@ -6,7 +7,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
 
 @Component({
   selector: 'app-hero-banner',
-  imports: [MatButtonModule, RouterLink, ScrollRevealDirective],
+  imports: [NgOptimizedImage, MatButtonModule, RouterLink, ScrollRevealDirective],
   templateUrl: './hero-banner.component.html',
   styleUrl: './hero-banner.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

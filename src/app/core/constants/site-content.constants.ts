@@ -1,4 +1,5 @@
 import { HeroContent } from '../models/hero-content.model';
+import { EquipmentHighlightItem } from '../models/equipment-highlight.model';
 import { ContactChannelItem, InfoCardItem } from '../models/info-card.model';
 import { ServiceItem } from '../models/service-item.model';
 import { COMPANY_INFO } from './company.constants';
@@ -31,7 +32,7 @@ export const HERO_CONTENT: HeroContent = {
     }
   ],
   imagePath: 'assets/images/del-07.png',
-  imageAlt: 'Equipe e estrutura tecnica da Del Tecnologia em ambiente corporativo de engenharia clinica.'
+  imageAlt: 'Equipe e estrutura técnica da Del Tecnologia em ambiente corporativo de engenharia clínica.'
 };
 
 export const ABOUT_PILLARS: readonly InfoCardItem[] = [
@@ -235,5 +236,56 @@ export const QUICK_CONTACT_ITEMS: readonly ContactChannelItem[] = [
     value: COMPANY_INFO.address,
     href: 'https://maps.google.com/?q=Rua%20Jos%C3%A9%20Pereira%20Liberato,%20987,%20Itaja%C3%AD,%20SC',
     description: 'Base estratégica em Itajaí/SC para atendimento com proximidade e organização.'
+  }
+] as const;
+
+export const EQUIPMENT_HIGHLIGHTS: readonly EquipmentHighlightItem[] = [
+  {
+    icon: 'donut_large',
+    group: 'Diagnóstico por imagem',
+    title: 'Tomógrafo',
+    description:
+      'Sistemas de imagem de alta criticidade que exigem controle rigoroso de disponibilidade, calibração e desempenho técnico contínuo.',
+    accent: '#c1121f'
+  },
+  {
+    icon: 'exposure',
+    group: 'Diagnóstico por imagem',
+    title: 'Raio X',
+    description:
+      'Equipamentos essenciais ao fluxo diagnóstico, com foco em segurança elétrica, qualidade de imagem e continuidade operacional.',
+    accent: '#e0313e'
+  },
+  {
+    icon: 'waves',
+    group: 'Diagnóstico por imagem',
+    title: 'Ultrassom',
+    description:
+      'Plataformas versáteis que demandam rotina técnica precisa para preservar confiabilidade clínica e produtividade assistencial.',
+    accent: '#f25d67'
+  },
+  {
+    icon: 'lightbulb',
+    group: 'Centro cirúrgico',
+    title: 'Foco cirúrgico',
+    description:
+      'Solução crítica para ambientes cirúrgicos, com atenção especial à iluminação, estabilidade e segurança durante os procedimentos.',
+    accent: '#b91c1c'
+  },
+  {
+    icon: 'monitor_heart',
+    group: 'Monitorização',
+    title: 'Monitor multiparamétrico',
+    description:
+      'Ativo vital para acompanhamento contínuo do paciente, com prioridade em rastreabilidade, alarmes e alta disponibilidade.',
+    accent: '#d62839'
+  },
+  {
+    icon: 'air',
+    group: 'Suporte à vida',
+    title: 'Respiradores',
+    description:
+      'Equipamentos de suporte à vida que exigem manutenção estruturada, testes funcionais e resposta técnica ágil em qualquer cenário crítico.',
+    accent: '#991b1b'
   }
 ] as const;

@@ -1,18 +1,24 @@
 <header class="header">
   <mat-toolbar class="header__toolbar">
-    <a class="brand" routerLink="/" aria-label="Ir para a pagina inicial da Del Tecnologia">
+    <a class="brand" routerLink="/" aria-label="Ir para a página inicial da Del Tecnologia">
       <span class="brand__mark">
-        <img src="assets/images/del-02.png" alt="Logo da Del Tecnologia">
+        <img
+          ngSrc="assets/images/del-02.png"
+          alt="Logo da Del Tecnologia"
+          width="1024"
+          height="1024"
+          priority
+        >
       </span>
       <span class="brand__text">
-        <small class="brand__eyebrow">Tecnologia Medica</small>
+        <small class="brand__eyebrow">Tecnologia Médica</small>
         <span class="brand__title-row">
           <strong>{{ companyName }}</strong>
         </span>
       </span>
     </a>
 
-    <nav class="header__nav" aria-label="Navegacao principal">
+    <nav class="header__nav" aria-label="Navegação principal">
       @for (item of navItems; track item.route) {
         <a
           class="header__link"
@@ -44,7 +50,7 @@
       class="header__menu-button"
       type="button"
       (click)="menuToggle.emit()"
-      aria-label="Abrir menu de navegacao"
+      aria-label="Abrir menu de navegação"
     >
       <mat-icon>menu</mat-icon>
     </button>

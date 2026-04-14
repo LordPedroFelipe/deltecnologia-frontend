@@ -113,7 +113,9 @@ export class RegisterPageComponent implements OnInit {
     this.seoService.updatePage({
       title: 'Cadastro Corporativo',
       description:
-        'Cadastro institucional Del Tecnologia para usuários e clientes da empresa, com estrutura pronta para relacionamento, atendimento e operações digitais.'
+        'Cadastro institucional Del Tecnologia para usuários e clientes da empresa, com estrutura pronta para relacionamento, atendimento e operações digitais.',
+      path: '/cadastro',
+      noindex: true
     });
   }
 

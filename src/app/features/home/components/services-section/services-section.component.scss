@@ -34,7 +34,7 @@
   object-fit: contain;
   object-position: center center;
   background:
-    radial-gradient(circle at center, rgba(255, 255, 255, 0.96), rgba(216, 241, 248, 0.9) 58%, rgba(191, 229, 243, 0.84) 100%);
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.98), rgba(244, 213, 216, 0.9) 58%, rgba(225, 225, 227, 0.84) 100%);
 }
 
 .services__grid {
@@ -70,7 +70,7 @@
 .services__card:hover {
   transform: translateY(-6px);
   box-shadow: 0 26px 46px rgba(2, 6, 23, 0.34);
-  border-color: rgba(96, 165, 250, 0.24);
+  border-color: rgba(193, 18, 31, 0.24);
 }
 
 .services__card:hover::before {
@@ -85,8 +85,8 @@
   margin-bottom: 1.25rem;
   border-radius: 18px;
   color: var(--color-accent);
-  background: rgba(96, 165, 250, 0.14);
-  border: 1px solid rgba(96, 165, 250, 0.18);
+  background: rgba(193, 18, 31, 0.14);
+  border: 1px solid rgba(193, 18, 31, 0.18);
 }
 
 .services__card h3 {
@@ -104,6 +104,14 @@
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+}
+
+.services__cta-button {
+  color: var(--color-title) !important;
+  border-color: rgba(193, 18, 31, 0.32) !important;
+  background: rgba(193, 18, 31, 0.08) !important;
+  font-family: var(--font-ui);
+  font-weight: 700;
 }
 
 @media (max-width: 991px) {

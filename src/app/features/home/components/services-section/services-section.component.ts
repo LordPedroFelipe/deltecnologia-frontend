@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -9,7 +10,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
 
 @Component({
   selector: 'app-services-section',
-  imports: [MatButtonModule, MatCardModule, MatIconModule, RouterLink, SectionTitleComponent, ScrollRevealDirective],
+  imports: [NgOptimizedImage, MatButtonModule, MatCardModule, MatIconModule, RouterLink, SectionTitleComponent, ScrollRevealDirective],
   templateUrl: './services-section.component.html',
   styleUrl: './services-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

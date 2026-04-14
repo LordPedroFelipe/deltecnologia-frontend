@@ -1,9 +1,9 @@
 <section class="section-block quick-contact">
   <div class="page-shell">
     <app-section-title
-      eyebrow="Contato rapido"
-      title="Fale com uma equipe preparada para entender sua operacao e estruturar a melhor solucao."
-      description="Apresente sua necessidade e receba um contato consultivo com foco em engenharia clinica, tecnologia medica e eficiencia operacional."
+      eyebrow="Contato rápido"
+      title="Fale com uma equipe preparada para entender sua operação e estruturar a melhor solução."
+      description="Apresente sua necessidade e receba um contato consultivo com foco em engenharia clínica, tecnologia médica e eficiência operacional."
     ></app-section-title>
 
     <div class="quick-contact__layout">
@@ -21,10 +21,17 @@
       </div>
 
       <figure class="quick-contact__visual surface-panel" appScrollReveal appScrollRevealOrigin="right">
-        <img [src]="imagePath" alt="Contato institucional e atendimento consultivo da Del Tecnologia.">
+        <img
+          [ngSrc]="imagePath"
+          alt="Contato institucional e atendimento consultivo da Del Tecnologia."
+          width="1536"
+          height="1024"
+          sizes="(max-width: 1024px) 92vw, 38vw"
+          loading="lazy"
+        >
         <figcaption>
-          <strong>Conversa consultiva com leitura da sua operacao</strong>
-          <span>Relacionamento comercial e tecnico pensado para decisao, seguranca e continuidade.</span>
+          <strong>Conversa consultiva com leitura da sua operação</strong>
+          <span>Relacionamento comercial e técnico pensado para decisão, segurança e continuidade.</span>
         </figcaption>
       </figure>
     </div>

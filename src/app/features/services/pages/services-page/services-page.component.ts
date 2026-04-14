@@ -23,7 +23,25 @@ export class ServicesPageComponent implements OnInit {
     this.seoService.updatePage({
       title: 'Serviços em Engenharia Clínica',
       description:
-        'Conheça os serviços da Del Tecnologia em engenharia clínica, manutenção, gestão de ativos eletromédicos e consultoria técnica.'
+        'Conheça os serviços da Del Tecnologia em engenharia clínica, manutenção, gestão de ativos eletromédicos e consultoria técnica.',
+      path: '/servicos',
+      keywords: [
+        'serviços de engenharia clínica',
+        'manutenção preventiva hospitalar',
+        'consultoria técnica hospitalar',
+        'inventário técnico'
+      ],
+      structuredData: [
+        this.seoService.createServiceSchema(
+          'Engenharia clínica e gestão de ativos eletromédicos',
+          'Serviços especializados de engenharia clínica, manutenção, inventário técnico e planejamento tecnológico hospitalar.',
+          '/servicos'
+        ),
+        this.seoService.createBreadcrumbSchema([
+          { name: 'Início', path: '/' },
+          { name: 'Serviços', path: '/servicos' }
+        ])
+      ]
     });
   }
 }

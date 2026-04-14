@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lordpedrofelipe.github.io/deltecnologia-frontend/sitemap.xml

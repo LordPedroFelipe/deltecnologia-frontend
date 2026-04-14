@@ -17,8 +17,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(96, 165, 250, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(96, 165, 250, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(193, 18, 31, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(193, 18, 31, 0.07) 1px, transparent 1px);
   background-size: 34px 34px;
   mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.6), transparent 88%);
 }
@@ -35,7 +35,7 @@
   left: -4%;
   width: 320px;
   height: 320px;
-  background: rgba(34, 211, 238, 0.18);
+  background: rgba(193, 18, 31, 0.18);
 }
 
 .login-page__beam--two {
@@ -43,7 +43,7 @@
   bottom: 10%;
   width: 360px;
   height: 360px;
-  background: rgba(37, 99, 235, 0.16);
+  background: rgba(107, 114, 128, 0.16);
 }
 
 .login-page__shell {
@@ -77,12 +77,12 @@
   display: grid;
   place-items: center;
   border-radius: 22px;
-  background: linear-gradient(135deg, #7dd3fc, #60a5fa 55%, #22d3ee);
+  background: linear-gradient(135deg, #e0313e, #c1121f 55%, #8f1119);
   color: #fff;
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 700;
-  box-shadow: 0 18px 30px rgba(34, 211, 238, 0.18);
+  box-shadow: 0 18px 30px rgba(193, 18, 31, 0.18);
 }
 
 .login-page__brand-copy h1 {
@@ -122,8 +122,8 @@
   gap: 1rem;
   padding: 1.15rem;
   border-radius: 22px;
-  border: 1px solid rgba(96, 165, 250, 0.14);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(209, 213, 219, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(193, 18, 31, 0.03));
 }
 
 .login-page__highlight mat-icon {
@@ -133,8 +133,8 @@
   place-items: center;
   border-radius: 16px;
   color: var(--color-accent);
-  background: rgba(96, 165, 250, 0.12);
-  border: 1px solid rgba(96, 165, 250, 0.16);
+  background: rgba(193, 18, 31, 0.12);
+  border: 1px solid rgba(193, 18, 31, 0.16);
 }
 
 .login-page__highlight strong,
@@ -163,7 +163,7 @@
 .login-page__trust-row span {
   padding: 0.78rem 1rem;
   border-radius: 999px;
-  border: 1px solid rgba(96, 165, 250, 0.16);
+  border: 1px solid rgba(209, 213, 219, 0.16);
   background: rgba(255, 255, 255, 0.03);
   color: var(--color-title);
   font-weight: 700;
@@ -194,8 +194,8 @@
   margin-top: 1rem;
   padding: 0.95rem 1rem;
   border-radius: 18px;
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  background: linear-gradient(180deg, rgba(34, 211, 238, 0.12), rgba(96, 165, 250, 0.06));
+  border: 1px solid rgba(193, 18, 31, 0.22);
+  background: linear-gradient(180deg, rgba(193, 18, 31, 0.16), rgba(255, 255, 255, 0.04));
   color: var(--color-title);
 }
 
@@ -235,9 +235,9 @@
 
 .login-card__submit {
   min-height: 50px;
-  color: #06101f;
-  background: linear-gradient(135deg, #7dd3fc, #60a5fa 55%, #22d3ee);
-  box-shadow: 0 16px 28px rgba(34, 211, 238, 0.16);
+  color: #fff;
+  background: linear-gradient(135deg, #e0313e, #c1121f 55%, #8f1119);
+  box-shadow: 0 16px 28px rgba(193, 18, 31, 0.16);
 }
 
 .login-card__footer {
@@ -246,14 +246,14 @@
   align-items: center;
   gap: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  border-top: 1px solid rgba(209, 213, 219, 0.14);
 }
 
 :host ::ng-deep .mat-mdc-form-field {
   --mdc-outlined-text-field-container-shape: 18px;
-  --mdc-outlined-text-field-outline-color: rgba(148, 163, 184, 0.28);
-  --mdc-outlined-text-field-hover-outline-color: rgba(96, 165, 250, 0.38);
-  --mdc-outlined-text-field-focus-outline-color: rgba(34, 211, 238, 0.78);
+  --mdc-outlined-text-field-outline-color: rgba(209, 213, 219, 0.28);
+  --mdc-outlined-text-field-hover-outline-color: rgba(193, 18, 31, 0.38);
+  --mdc-outlined-text-field-focus-outline-color: rgba(193, 18, 31, 0.78);
   --mdc-outlined-text-field-label-text-color: var(--color-text-muted);
   --mdc-outlined-text-field-input-text-color: var(--color-title);
 }

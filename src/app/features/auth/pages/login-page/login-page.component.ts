@@ -57,7 +57,9 @@ export class LoginPageComponent implements OnInit {
     this.seoService.updatePage({
       title: 'Login Corporativo',
       description:
-        'Acesso corporativo Del Tecnologia para acompanhamento de solucoes, relacionamento tecnico e operacoes digitais.'
+        'Acesso corporativo Del Tecnologia para acompanhamento de soluções, relacionamento técnico e operações digitais.',
+      path: '/login',
+      noindex: true
     });
 
     const registered = this.route.snapshot.queryParamMap.get('registered');
@@ -66,7 +68,7 @@ export class LoginPageComponent implements OnInit {
     const deniedFrom = this.route.snapshot.queryParamMap.get('deniedFrom');
 
     if (registered === '1') {
-      this.flowMessage.set('Cadastro enviado com sucesso. Faca login para continuar sua jornada com a Del.');
+      this.flowMessage.set('Cadastro enviado com sucesso. Faça login para continuar sua jornada com a Del.');
       return;
     }
 
@@ -77,13 +79,15 @@ export class LoginPageComponent implements OnInit {
 
     if (resetRequested === '1') {
       this.flowMessage.set(
-        'Solicitacao de recuperacao registrada. Assim que validada, voce podera acessar sua conta novamente.'
+        'Solicitação de recuperação registrada. Assim que validada, você poderá acessar sua conta novamente.'
       );
       return;
     }
 
     if (deniedFrom) {
-      this.flowMessage.set('Seu perfil atual nao possui permissao para a rota solicitada. Voce foi redirecionado para uma area permitida.');
+      this.flowMessage.set(
+        'Seu perfil atual não possui permissão para a rota solicitada. Você foi redirecionado para uma área permitida.'
+      );
     }
   }
 
@@ -105,7 +109,7 @@ export class LoginPageComponent implements OnInit {
       .subscribe({
         next: (session) => {
           console.info('Mock auth session', session);
-          this.snackBar.open('Login efetuado com sucesso. Redirecionando para sua area inicial.', 'Fechar', {
+          this.snackBar.open('Login efetuado com sucesso. Redirecionando para sua área inicial.', 'Fechar', {
             duration: 4000
           });
 
@@ -113,7 +117,7 @@ export class LoginPageComponent implements OnInit {
           void this.router.navigateByUrl(returnUrl);
         },
         error: () => {
-          this.snackBar.open('Nao foi possivel autenticar. Revise seus dados e tente novamente.', 'Fechar', {
+          this.snackBar.open('Não foi possível autenticar. Revise seus dados e tente novamente.', 'Fechar', {
             duration: 5000
           });
         }
@@ -124,17 +128,17 @@ export class LoginPageComponent implements OnInit {
     const control = this.loginForm.controls[controlName];
 
     if (control.hasError('required')) {
-      return 'Este campo e obrigatorio.';
+      return 'Este campo é obrigatório.';
     }
 
     if (control.hasError('email')) {
-      return 'Informe um e-mail corporativo valido.';
+      return 'Informe um e-mail corporativo válido.';
     }
 
     if (control.hasError('minlength')) {
       return `Use pelo menos ${control.getError('minlength').requiredLength} caracteres.`;
     }
 
-    return 'Verifique as informacoes informadas.';
+    return 'Verifique as informações informadas.';
   }
 }

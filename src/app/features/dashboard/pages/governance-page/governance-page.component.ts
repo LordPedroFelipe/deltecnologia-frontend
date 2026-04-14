@@ -23,24 +23,26 @@ export class GovernancePageComponent {
     {
       icon: 'admin_panel_settings',
       title: 'Perfil autenticado',
-      description: `Este acesso esta operando como ${this.authService.session()?.user.roleLabel ?? 'perfil protegido'}.`
+      description: `Este acesso está operando como ${this.authService.session()?.user.roleLabel ?? 'perfil protegido'}.`
     },
     {
       icon: 'policy',
-      title: 'Trilha de governanca',
-      description: 'Estrutura pronta para logs de auditoria, aprovacoes e politicas internas.'
+      title: 'Trilha de governança',
+      description: 'Estrutura pronta para logs de auditoria, aprovações e políticas internas.'
     },
     {
       icon: 'verified_user',
-      title: 'Permissoes em camadas',
-      description: 'As rotas internas ja consideram regras por permissao para dar mais seguranca a evolucao futura.'
+      title: 'Permissões em camadas',
+      description: 'As rotas internas já consideram regras por permissão para dar mais segurança à evolução futura.'
     }
   ]);
 
   constructor() {
     this.seoService.updatePage({
-      title: 'Portal Del | Governanca',
-      description: 'Centro de governanca do portal Del com permissao, trilha de acesso e controles institucionais.'
+      title: 'Portal Del | Governança',
+      description: 'Centro de governança do portal Del com permissão, trilha de acesso e controles institucionais.',
+      path: '/area-del/governanca',
+      noindex: true
     });
   }
 }

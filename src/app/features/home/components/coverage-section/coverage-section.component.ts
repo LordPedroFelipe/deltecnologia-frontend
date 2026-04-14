@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { InfoCardItem } from '../../../../core/models/info-card.model';
 import { InfoCardComponent } from '../../../../shared/components/info-card/info-card.component';
@@ -6,7 +7,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
 
 @Component({
   selector: 'app-coverage-section',
-  imports: [SectionTitleComponent, InfoCardComponent, ScrollRevealDirective],
+  imports: [NgOptimizedImage, SectionTitleComponent, InfoCardComponent, ScrollRevealDirective],
   templateUrl: './coverage-section.component.html',
   styleUrl: './coverage-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

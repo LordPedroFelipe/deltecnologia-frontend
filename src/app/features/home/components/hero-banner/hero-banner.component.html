@@ -11,10 +11,10 @@
     </div>
 
     <div class="hero__actions">
-      <a mat-flat-button color="primary" [routerLink]="content.primaryAction.route">
+      <a mat-flat-button class="hero__primary-action" [routerLink]="content.primaryAction.route">
         {{ content.primaryAction.label }}
       </a>
-      <a mat-stroked-button [routerLink]="content.secondaryAction.route">
+      <a mat-stroked-button class="hero__secondary-action" [routerLink]="content.secondaryAction.route">
         {{ content.secondaryAction.label }}
       </a>
     </div>
@@ -36,6 +36,13 @@
       <strong>Del Tecnologia</strong>
       <span>Engenharia Clínica de alto padrão</span>
     </div>
-    <img [src]="content.imagePath" [alt]="content.imageAlt">
+    <img
+      [ngSrc]="content.imagePath"
+      [alt]="content.imageAlt"
+      width="1536"
+      height="1024"
+      sizes="(max-width: 1024px) 92vw, 42vw"
+      priority
+    >
   </div>
 </section>

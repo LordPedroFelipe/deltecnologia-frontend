@@ -65,7 +65,7 @@ export class ForgotPasswordPageComponent implements OnInit {
   protected readonly submitting = signal(false);
   protected readonly challenge = this.authService.resetChallenge;
   protected readonly challengeHint = computed(
-    () => `Use o codigo demo 204060 para validar esta experiencia de duas etapas.`
+    () => 'Use o código demo 204060 para validar esta experiência de duas etapas.'
   );
 
   protected readonly identityForm = this.formBuilder.group({
@@ -87,7 +87,9 @@ export class ForgotPasswordPageComponent implements OnInit {
     this.seoService.updatePage({
       title: 'Recuperar senha',
       description:
-        'Fluxo em duas etapas para redefinicao de senha da area Del com validacao institucional e seguranca.'
+        'Fluxo em duas etapas para redefinição de senha da área Del com validação institucional e segurança.',
+      path: '/recuperar-senha',
+      noindex: true
     });
   }
 
@@ -105,12 +107,12 @@ export class ForgotPasswordPageComponent implements OnInit {
       .subscribe({
         next: () => {
           this.step.set('verify');
-          this.snackBar.open('Codigo enviado para validacao do acesso.', 'Fechar', {
+          this.snackBar.open('Código enviado para validação do acesso.', 'Fechar', {
             duration: 4500
           });
         },
         error: () => {
-          this.snackBar.open('Nao foi possivel iniciar a recuperacao agora.', 'Fechar', {
+          this.snackBar.open('Não foi possível iniciar a recuperação agora.', 'Fechar', {
             duration: 5000
           });
         }
@@ -139,7 +141,7 @@ export class ForgotPasswordPageComponent implements OnInit {
           });
         },
         error: (error: Error) => {
-          this.snackBar.open(error.message || 'Nao foi possivel validar o codigo.', 'Fechar', {
+          this.snackBar.open(error.message || 'Não foi possível validar o código.', 'Fechar', {
             duration: 5000
           });
         }
@@ -154,25 +156,25 @@ export class ForgotPasswordPageComponent implements OnInit {
     const control = this.identityForm.controls[controlName];
 
     if (control.hasError('required')) {
-      return 'Este campo e obrigatorio.';
+      return 'Este campo é obrigatório.';
     }
 
     if (control.hasError('email')) {
-      return 'Informe um e-mail valido.';
+      return 'Informe um e-mail válido.';
     }
 
     if (control.hasError('minlength')) {
       return `Preencha ao menos ${control.getError('minlength').requiredLength} caracteres.`;
     }
 
-    return 'Verifique as informacoes informadas.';
+    return 'Verifique as informações informadas.';
   }
 
   protected getVerificationError(controlName: 'verificationCode' | 'password' | 'confirmPassword'): string {
     const control = this.verificationForm.controls[controlName];
 
     if (control.hasError('required')) {
-      return 'Este campo e obrigatorio.';
+      return 'Este campo é obrigatório.';
     }
 
     if (control.hasError('minlength')) {
@@ -183,6 +185,6 @@ export class ForgotPasswordPageComponent implements OnInit {
       return 'As senhas precisam ser iguais.';
     }
 
-    return 'Verifique as informacoes informadas.';
+    return 'Verifique as informações informadas.';
   }
 }

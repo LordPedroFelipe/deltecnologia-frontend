@@ -1,17 +1,17 @@
 <section class="dashboard-page">
   <div class="dashboard-page__shell">
     <section class="dashboard-hero surface-panel" appScrollReveal appScrollRevealOrigin="left">
-      <span class="eyebrow">Visao geral</span>
+      <span class="eyebrow">Visão geral</span>
       <h1>Bom trabalho, {{ welcomeName() }}.</h1>
       <p>
-        Seu portal esta alinhado ao perfil <strong>{{ user()?.roleLabel }}</strong> e pronto para
-        acompanhar ativos, performance operacional, atendimentos e governanca com uma camada visual premium.
+        Seu portal está alinhado ao perfil <strong>{{ user()?.roleLabel }}</strong> e pronto para
+        acompanhar ativos, performance operacional, atendimentos e governança com uma camada visual premium.
       </p>
 
       @if (deniedFrom) {
         <div class="dashboard-hero__notice">
           <mat-icon>lock</mat-icon>
-          <span>Seu perfil nao possui acesso a <strong>{{ deniedFrom }}</strong>. Exibimos a melhor area disponivel para esta conta.</span>
+          <span>Seu perfil não possui acesso a <strong>{{ deniedFrom }}</strong>. Exibimos a melhor área disponível para esta conta.</span>
         </div>
       }
 
@@ -21,7 +21,7 @@
           <strong>{{ user()?.company }}</strong>
         </div>
         <div>
-          <span>Sessao valida ate</span>
+          <span>Sessão válida até</span>
           <strong>{{ session()?.expiresAt | date:'dd/MM/yyyy HH:mm' }}</strong>
         </div>
         <div>
@@ -47,8 +47,8 @@
     <section class="dashboard-section">
       <app-section-title
         eyebrow="Atalhos inteligentes"
-        title="Acoes priorizadas de acordo com o seu perfil."
-        description="A navegacao inicial foi organizada para reduzir cliques e acelerar as rotinas mais importantes para este tipo de acesso."
+        title="Ações priorizadas de acordo com o seu perfil."
+        description="A navegação inicial foi organizada para reduzir cliques e acelerar as rotinas mais importantes para este tipo de acesso."
       ></app-section-title>
 
       <div class="dashboard-shortcuts">
@@ -68,9 +68,9 @@
     <section class="dashboard-grid">
       <article class="dashboard-panel surface-panel" appScrollReveal appScrollRevealOrigin="left">
         <app-section-title
-          eyebrow="Fila prioritaria"
-          title="O que merece atencao imediata hoje."
-          description="Uma leitura rapida para orientar decisao, acompanhamento e atuacao com mais contexto."
+          eyebrow="Fila prioritária"
+          title="O que merece atenção imediata hoje."
+          description="Uma leitura rápida para orientar decisão, acompanhamento e atuação com mais contexto."
         ></app-section-title>
 
         <div class="dashboard-activities">
@@ -89,12 +89,12 @@
 
       <aside class="dashboard-panel surface-panel" appScrollReveal appScrollRevealOrigin="right">
         <span class="eyebrow">Canal consultivo</span>
-        <h3>Precisa escalar um tema tecnico ou estrategico?</h3>
+        <h3>Precisa escalar um tema técnico ou estratégico?</h3>
         <p>
-          O portal esta preparado para evoluir com chamados, aprovacoes e comunicacao estruturada.
-          Enquanto isso, o atendimento Del segue disponivel para suporte consultivo.
+          O portal está preparado para evoluir com chamados, aprovações e comunicação estruturada.
+          Enquanto isso, o atendimento Del segue disponível para suporte consultivo.
         </p>
-        <a mat-flat-button [routerLink]="supportRoute">
+        <a mat-flat-button class="dashboard-panel__cta" [routerLink]="supportRoute">
           <mat-icon>support_agent</mat-icon>
           Falar com a Del
         </a>

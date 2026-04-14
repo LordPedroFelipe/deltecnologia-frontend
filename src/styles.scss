@@ -1,23 +1,23 @@
 @import '@angular/material/prebuilt-themes/azure-blue.css';
 
 :root {
-  --color-primary: #60a5fa;
-  --color-primary-dark: #2563eb;
-  --color-primary-soft: #172554;
-  --color-accent: #22d3ee;
-  --color-secondary: #0f2748;
-  --color-surface: rgba(10, 21, 40, 0.82);
-  --color-surface-alt: rgba(8, 17, 32, 0.94);
-  --color-surface-dark: #07101f;
-  --color-border: rgba(148, 163, 184, 0.18);
-  --color-border-strong: rgba(96, 165, 250, 0.32);
-  --color-text: #e5eefb;
-  --color-text-muted: #9fb0c9;
-  --color-title: #f8fbff;
+  --color-primary: #c1121f;
+  --color-primary-dark: #8f1119;
+  --color-primary-soft: #f4d5d8;
+  --color-accent: #c1121f;
+  --color-secondary: #111111;
+  --color-surface: rgba(17, 17, 17, 0.86);
+  --color-surface-alt: rgba(24, 24, 27, 0.95);
+  --color-surface-dark: #111111;
+  --color-border: rgba(209, 213, 219, 0.18);
+  --color-border-strong: rgba(193, 18, 31, 0.34);
+  --color-text: #f5f5f5;
+  --color-text-muted: #d1d5db;
+  --color-title: #ffffff;
   --color-success: #0f9d78;
-  --shadow-soft: 0 30px 80px rgba(2, 6, 23, 0.45);
-  --shadow-card: 0 18px 40px rgba(2, 6, 23, 0.28);
-  --shadow-hero: 0 36px 90px rgba(2, 6, 23, 0.5);
+  --shadow-soft: 0 30px 80px rgba(0, 0, 0, 0.42);
+  --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.26);
+  --shadow-hero: 0 36px 90px rgba(0, 0, 0, 0.48);
   --radius-sm: 16px;
   --radius-md: 24px;
   --radius-lg: 36px;
@@ -37,9 +37,9 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.24), transparent 30%),
-    radial-gradient(circle at top right, rgba(34, 211, 238, 0.18), transparent 24%),
-    linear-gradient(160deg, #050b16 0%, #081120 32%, #0b1730 68%, #07101f 100%);
+    radial-gradient(circle at top left, rgba(193, 18, 31, 0.22), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 22%),
+    linear-gradient(160deg, #050505 0%, #0b0b0c 32%, #121214 68%, #161618 100%);
   overflow-x: hidden;
 }
 
@@ -57,7 +57,7 @@ body::before {
   height: 260px;
   top: 8%;
   left: -40px;
-  background: rgba(34, 211, 238, 0.16);
+  background: rgba(193, 18, 31, 0.18);
 }
 
 body::after {
@@ -65,7 +65,7 @@ body::after {
   height: 300px;
   right: -40px;
   bottom: 10%;
-  background: rgba(37, 99, 235, 0.18);
+  background: rgba(107, 114, 128, 0.18);
 }
 
 *,
@@ -130,7 +130,7 @@ textarea {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(34, 211, 238, 0.02));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(193, 18, 31, 0.06));
   pointer-events: none;
   z-index: -1;
 }
@@ -142,8 +142,8 @@ textarea {
   padding: 0.5rem 0.95rem;
   border-radius: 999px;
   border: 1px solid var(--color-border-strong);
-  background: rgba(37, 99, 235, 0.12);
-  color: var(--color-accent);
+  background: rgba(193, 18, 31, 0.12);
+  color: #ffd9dd;
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -171,7 +171,7 @@ textarea {
 }
 
 .mat-divider {
-  border-top-color: rgba(148, 163, 184, 0.16) !important;
+  border-top-color: rgba(209, 213, 219, 0.16) !important;
 }
 
 .reveal-up {
@@ -221,8 +221,8 @@ textarea {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(15, 93, 184, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 93, 184, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(193, 18, 31, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(193, 18, 31, 0.06) 1px, transparent 1px);
   background-size: 32px 32px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 80%);
   pointer-events: none;

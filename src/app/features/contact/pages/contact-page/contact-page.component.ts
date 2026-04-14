@@ -22,7 +22,16 @@ export class ContactPageComponent implements OnInit {
     this.seoService.updatePage({
       title: 'Contato',
       description:
-        'Entre em contato com a Del Tecnologia para falar sobre engenharia clínica, gestão de ativos eletromédicos e tecnologia médica.'
+        'Entre em contato com a Del Tecnologia para falar sobre engenharia clínica, gestão de ativos eletromédicos e tecnologia médica.',
+      path: '/contato',
+      keywords: ['contato del tecnologia', 'engenharia clínica itajaí', 'tecnologia médica sc'],
+      structuredData: [
+        this.seoService.createProfessionalServiceSchema('/contato'),
+        this.seoService.createBreadcrumbSchema([
+          { name: 'Início', path: '/' },
+          { name: 'Contato', path: '/contato' }
+        ])
+      ]
     });
   }
 }

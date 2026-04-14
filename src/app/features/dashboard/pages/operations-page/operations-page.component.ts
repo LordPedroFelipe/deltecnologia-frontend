@@ -23,30 +23,32 @@ export class OperationsPageComponent {
     if (this.role() === AuthRole.Admin) {
       return [
         { sector: 'UTI Adulto', coverage: '218 ativos', status: '99,2% conformidade' },
-        { sector: 'Centro Cirurgico', coverage: '164 ativos', status: '4 corretivas em execucao' },
-        { sector: 'Diagnostico por imagem', coverage: '122 ativos', status: 'Janela de calibracao ativa' }
+        { sector: 'Centro Cirúrgico', coverage: '164 ativos', status: '4 corretivas em execução' },
+        { sector: 'Diagnóstico por imagem', coverage: '122 ativos', status: 'Janela de calibração ativa' }
       ];
     }
 
     if (this.role() === AuthRole.ClientManager) {
       return [
-        { sector: 'Bloco clinico', coverage: '96 ativos', status: 'Preventivas acima de 97%' },
-        { sector: 'UTI', coverage: '54 ativos', status: '1 ativo sob analise' },
+        { sector: 'Bloco clínico', coverage: '96 ativos', status: 'Preventivas acima de 97%' },
+        { sector: 'UTI', coverage: '54 ativos', status: '1 ativo sob análise' },
         { sector: 'Pronto atendimento', coverage: '73 ativos', status: 'Fila controlada' }
       ];
     }
 
     return [
-      { sector: 'Rota tecnica A', coverage: '18 ordens', status: '5 atendimentos hoje' },
-      { sector: 'Rota tecnica B', coverage: '22 ordens', status: '2 pendencias externas' },
-      { sector: 'Laboratorio central', coverage: '9 ativos', status: 'Checklist em execucao' }
+      { sector: 'Rota técnica A', coverage: '18 ordens', status: '5 atendimentos hoje' },
+      { sector: 'Rota técnica B', coverage: '22 ordens', status: '2 pendências externas' },
+      { sector: 'Laboratório central', coverage: '9 ativos', status: 'Checklist em execução' }
     ];
   });
 
   constructor() {
     this.seoService.updatePage({
-      title: 'Portal Del | Operacoes',
-      description: 'Visao operacional com ativos, manutencoes e andamento tecnico da conta.'
+      title: 'Portal Del | Operações',
+      description: 'Visão operacional com ativos, manutenções e andamento técnico da conta.',
+      path: '/area-del/operacoes',
+      noindex: true
     });
   }
 }
