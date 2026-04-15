@@ -3,10 +3,10 @@
 }
 
 .services-page__band {
-  color: white;
+  color: var(--color-title);
   background:
-    radial-gradient(circle at top right, rgba(38, 166, 209, 0.2), transparent 26%),
-    linear-gradient(135deg, #0d294d 0%, #083d74 100%);
+    radial-gradient(circle at top right, rgba(201, 210, 219, 0.28), transparent 26%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(238, 242, 245, 0.98) 100%);
 }
 
 .services-page__differentials {

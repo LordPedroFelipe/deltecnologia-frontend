@@ -246,7 +246,7 @@ export const EQUIPMENT_HIGHLIGHTS: readonly EquipmentHighlightItem[] = [
     title: 'Tomógrafo',
     description:
       'Sistemas de imagem de alta criticidade que exigem controle rigoroso de disponibilidade, calibração e desempenho técnico contínuo.',
-    accent: '#c1121f'
+    accent: '#7b8794'
   },
   {
     icon: 'exposure',
@@ -254,7 +254,7 @@ export const EQUIPMENT_HIGHLIGHTS: readonly EquipmentHighlightItem[] = [
     title: 'Raio X',
     description:
       'Equipamentos essenciais ao fluxo diagnóstico, com foco em segurança elétrica, qualidade de imagem e continuidade operacional.',
-    accent: '#e0313e'
+    accent: '#94a3b8'
   },
   {
     icon: 'waves',
@@ -262,7 +262,7 @@ export const EQUIPMENT_HIGHLIGHTS: readonly EquipmentHighlightItem[] = [
     title: 'Ultrassom',
     description:
       'Plataformas versáteis que demandam rotina técnica precisa para preservar confiabilidade clínica e produtividade assistencial.',
-    accent: '#f25d67'
+    accent: '#b8c2cc'
   },
   {
     icon: 'lightbulb',
@@ -270,7 +270,7 @@ export const EQUIPMENT_HIGHLIGHTS: readonly EquipmentHighlightItem[] = [
     title: 'Foco cirúrgico',
     description:
       'Solução crítica para ambientes cirúrgicos, com atenção especial à iluminação, estabilidade e segurança durante os procedimentos.',
-    accent: '#b91c1c'
+    accent: '#5f6f7f'
   },
   {
     icon: 'monitor_heart',
@@ -278,7 +278,7 @@ export const EQUIPMENT_HIGHLIGHTS: readonly EquipmentHighlightItem[] = [
     title: 'Monitor multiparamétrico',
     description:
       'Ativo vital para acompanhamento contínuo do paciente, com prioridade em rastreabilidade, alarmes e alta disponibilidade.',
-    accent: '#d62839'
+    accent: '#6b7b8a'
   },
   {
     icon: 'air',
@@ -286,6 +286,6 @@ export const EQUIPMENT_HIGHLIGHTS: readonly EquipmentHighlightItem[] = [
     title: 'Respiradores',
     description:
       'Equipamentos de suporte à vida que exigem manutenção estruturada, testes funcionais e resposta técnica ágil em qualquer cenário crítico.',
-    accent: '#991b1b'
+    accent: '#4b5563'
   }
 ] as const;

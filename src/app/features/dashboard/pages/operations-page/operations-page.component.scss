@@ -11,8 +11,8 @@
 
 .operations-card {
   padding: 1.5rem;
-  border-color: rgba(148, 163, 184, 0.14);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(224, 230, 237, 1);
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .operations-card__icon {
@@ -23,7 +23,8 @@
   margin-bottom: 1rem;
   border-radius: 18px;
   color: var(--color-accent);
-  background: rgba(96, 165, 250, 0.14);
+  background: rgba(241, 244, 247, 0.96);
+  border: 1px solid rgba(224, 230, 237, 1);
 }
 
 .operations-card h3,

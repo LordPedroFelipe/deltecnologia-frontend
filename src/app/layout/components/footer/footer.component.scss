@@ -1,10 +1,10 @@
 .footer {
   margin-top: 4rem;
-  color: #fff;
+  color: var(--color-title);
   background:
-    radial-gradient(circle at top left, rgba(193, 18, 31, 0.22), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.06), transparent 22%),
-    linear-gradient(160deg, #0b0b0c 0%, #121214 55%, #17171a 100%);
+    radial-gradient(circle at top left, rgba(201, 210, 219, 0.26), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.65), transparent 24%),
+    linear-gradient(180deg, #f3f6f8 0%, #eef2f5 55%, #e7edf2 100%);
 }
 
 .footer__shell {
@@ -27,7 +27,7 @@
 
 .footer__brand p,
 .footer__contact span {
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--color-text-secondary);
   line-height: 1.7;
 }
 
@@ -40,7 +40,7 @@
 
 .footer__links a,
 .footer__contact a {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-title);
 }
 
 .footer__bottom {
@@ -53,13 +53,13 @@
 
 .footer__bottom p {
   margin: 0;
-  color: rgba(209, 213, 219, 0.78);
+  color: var(--color-text-muted);
 }
 
 .footer__cta {
-  color: #fff !important;
-  border-color: rgba(193, 18, 31, 0.34) !important;
-  background: rgba(193, 18, 31, 0.1) !important;
+  color: var(--color-title) !important;
+  border-color: rgba(224, 230, 237, 1) !important;
+  background: var(--color-secondary) !important;
   font-family: var(--font-ui);
   font-weight: 700;
 }
