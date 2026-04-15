@@ -6,10 +6,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AppRoute } from '../../../core/enums/app-route.enum';
 import { NavigationItem } from '../../../core/models/navigation-item.model';
+import { PremiumCardDirective } from '../../../shared/directives/premium-card.directive';
 
 @Component({
   selector: 'app-header',
-  imports: [NgOptimizedImage, MatToolbarModule, MatButtonModule, MatIconModule, RouterLink, RouterLinkActive],
+  imports: [NgOptimizedImage, MatToolbarModule, MatButtonModule, MatIconModule, RouterLink, RouterLinkActive, PremiumCardDirective],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

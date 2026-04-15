@@ -22,6 +22,7 @@
       @for (item of navItems; track item.route) {
         <a
           class="header__link"
+          appPremiumFx="soft"
           [routerLink]="item.route"
           routerLinkActive="header__link--active"
           [routerLinkActiveOptions]="{ exact: item.exact ?? item.route === '/' }"
@@ -35,12 +36,14 @@
     </nav>
 
     <div class="header__actions">
-      <a mat-stroked-button class="header__login" [routerLink]="loginRoute">
+      <!--
+      <a mat-stroked-button class="header__login" appPremiumFx="button" [routerLink]="loginRoute">
         <mat-icon>login</mat-icon>
         Entrar
       </a>
+      -->
 
-      <a mat-flat-button class="header__cta" color="primary" [routerLink]="contactRoute">
+      <a mat-flat-button class="header__cta" appPremiumFx="button" color="primary" [routerLink]="contactRoute">
         Falar com a Del
       </a>
     </div>
@@ -48,6 +51,7 @@
     <button
       mat-icon-button
       class="header__menu-button"
+      appPremiumFx="icon"
       type="button"
       (click)="menuToggle.emit()"
       aria-label="Abrir menu de navegação"

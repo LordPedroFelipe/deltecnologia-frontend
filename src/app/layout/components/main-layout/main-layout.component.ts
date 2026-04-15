@@ -11,6 +11,7 @@ import { filter } from 'rxjs';
 import { COMPANY_INFO } from '../../../core/constants/company.constants';
 import { NAVIGATION_ITEMS } from '../../../core/constants/navigation.constants';
 import { FloatingWhatsappButtonComponent } from '../../../features/home/components/floating-whatsapp-button/floating-whatsapp-button.component';
+import { PremiumCardDirective } from '../../../shared/directives/premium-card.directive';
 import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 
@@ -26,6 +27,7 @@ import { HeaderComponent } from '../header/header.component';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
+    PremiumCardDirective,
     HeaderComponent,
     FooterComponent,
     FloatingWhatsappButtonComponent

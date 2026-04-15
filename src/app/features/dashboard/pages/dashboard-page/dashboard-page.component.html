@@ -1,6 +1,6 @@
 <section class="dashboard-page">
   <div class="dashboard-page__shell">
-    <section class="dashboard-hero surface-panel" appScrollReveal appScrollRevealOrigin="left">
+    <section class="dashboard-hero surface-panel" appPremiumFx="soft" appScrollReveal appScrollRevealOrigin="left">
       <span class="eyebrow">Visão geral</span>
       <h1>Bom trabalho, {{ welcomeName() }}.</h1>
       <p>
@@ -9,22 +9,22 @@
       </p>
 
       @if (deniedFrom) {
-        <div class="dashboard-hero__notice">
+        <div class="dashboard-hero__notice" appPremiumFx="soft">
           <mat-icon>lock</mat-icon>
           <span>Seu perfil não possui acesso a <strong>{{ deniedFrom }}</strong>. Exibimos a melhor área disponível para esta conta.</span>
         </div>
       }
 
       <div class="dashboard-hero__meta">
-        <div>
+        <div appPremiumFx="soft">
           <span>Conta vinculada</span>
           <strong>{{ user()?.company }}</strong>
         </div>
-        <div>
+        <div appPremiumFx="soft">
           <span>Sessão válida até</span>
           <strong>{{ session()?.expiresAt | date:'dd/MM/yyyy HH:mm' }}</strong>
         </div>
-        <div>
+        <div appPremiumFx="soft">
           <span>E-mail principal</span>
           <strong>{{ user()?.email }}</strong>
         </div>
@@ -66,7 +66,7 @@
     </section>
 
     <section class="dashboard-grid">
-      <article class="dashboard-panel surface-panel" appScrollReveal appScrollRevealOrigin="left">
+      <article class="dashboard-panel surface-panel" appPremiumFx="soft" appScrollReveal appScrollRevealOrigin="left">
         <app-section-title
           eyebrow="Fila prioritária"
           title="O que merece atenção imediata hoje."
@@ -75,7 +75,7 @@
 
         <div class="dashboard-activities">
           @for (activity of activities(); track activity.title) {
-            <div class="activity-row">
+            <div class="activity-row" appPremiumFx="soft">
               <div class="activity-row__status">{{ activity.status }}</div>
               <div class="activity-row__content">
                 <strong>{{ activity.title }}</strong>
@@ -87,14 +87,14 @@
         </div>
       </article>
 
-      <aside class="dashboard-panel surface-panel" appScrollReveal appScrollRevealOrigin="right">
+      <aside class="dashboard-panel surface-panel" appPremiumFx="soft" appScrollReveal appScrollRevealOrigin="right">
         <span class="eyebrow">Canal consultivo</span>
         <h3>Precisa escalar um tema técnico ou estratégico?</h3>
         <p>
           O portal está preparado para evoluir com chamados, aprovações e comunicação estruturada.
           Enquanto isso, o atendimento Del segue disponível para suporte consultivo.
         </p>
-        <a mat-flat-button class="dashboard-panel__cta" [routerLink]="supportRoute">
+        <a mat-flat-button class="dashboard-panel__cta" appPremiumFx="button" [routerLink]="supportRoute">
           <mat-icon>support_agent</mat-icon>
           Falar com a Del
         </a>

@@ -6,7 +6,7 @@
   </div>
 
   <div class="login-page__shell page-shell">
-    <section class="login-page__brand surface-panel" appScrollReveal appScrollRevealOrigin="left">
+    <section class="login-page__brand surface-panel" appPremiumFx="soft" appScrollReveal appScrollRevealOrigin="left">
       <a class="login-page__brand-link" routerLink="/">
         <span class="login-page__brand-mark">DT</span>
         <div class="login-page__brand-copy">
@@ -24,7 +24,7 @@
         </p>
 
         <div class="login-page__highlights">
-          <article class="login-page__highlight">
+          <article class="login-page__highlight" appPremiumFx="soft">
             <mat-icon>shield_lock</mat-icon>
             <div>
               <strong>Segurança e rastreabilidade</strong>
@@ -32,7 +32,7 @@
             </div>
           </article>
 
-          <article class="login-page__highlight">
+          <article class="login-page__highlight" appPremiumFx="soft">
             <mat-icon>monitor_heart</mat-icon>
             <div>
               <strong>Experiência alinhada ao setor</strong>
@@ -40,7 +40,7 @@
             </div>
           </article>
 
-          <article class="login-page__highlight">
+          <article class="login-page__highlight" appPremiumFx="soft">
             <mat-icon>hub</mat-icon>
             <div>
               <strong>Base pronta para escalar</strong>
@@ -93,6 +93,7 @@
           <button
             mat-icon-button
             matSuffix
+            appPremiumFx="icon"
             type="button"
             (click)="togglePasswordVisibility()"
             [attr.aria-label]="showPassword() ? 'Ocultar senha' : 'Mostrar senha'"
@@ -107,12 +108,12 @@
         <div class="login-card__row">
           <mat-checkbox formControlName="remember">Manter sessão ativa neste dispositivo</mat-checkbox>
           <div class="login-card__inline-links">
-            <a class="login-card__link" routerLink="/recuperar-senha">Esqueci minha senha</a>
-            <a class="login-card__link" routerLink="/contato">Precisa de suporte?</a>
+            <a class="login-card__link" appPremiumFx="soft" routerLink="/recuperar-senha">Esqueci minha senha</a>
+            <a class="login-card__link" appPremiumFx="soft" routerLink="/contato">Precisa de suporte?</a>
           </div>
         </div>
 
-        <button mat-flat-button type="submit" class="login-card__submit" [disabled]="submitting()">
+        <button mat-flat-button type="submit" class="login-card__submit" appPremiumFx="button" [disabled]="submitting()">
           @if (submitting()) {
             <mat-spinner diameter="20"></mat-spinner>
           } @else {
@@ -125,8 +126,8 @@
       <div class="login-card__footer">
         <span>Ainda não possui acesso?</span>
         <div class="login-card__footer-links">
-          <a routerLink="/cadastro">Criar conta corporativa</a>
-          <a routerLink="/contato">Solicitar atendimento consultivo</a>
+          <a appPremiumFx="soft" routerLink="/cadastro">Criar conta corporativa</a>
+          <a appPremiumFx="soft" routerLink="/contato">Solicitar atendimento consultivo</a>
         </div>
       </div>
     </section>

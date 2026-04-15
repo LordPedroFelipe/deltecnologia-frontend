@@ -11,17 +11,17 @@
     </div>
 
     <div class="hero__actions">
-      <a mat-flat-button class="hero__primary-action" [routerLink]="content.primaryAction.route">
+      <a mat-flat-button class="hero__primary-action" appPremiumFx="button" [routerLink]="content.primaryAction.route">
         {{ content.primaryAction.label }}
       </a>
-      <a mat-stroked-button class="hero__secondary-action" [routerLink]="content.secondaryAction.route">
+      <a mat-stroked-button class="hero__secondary-action" appPremiumFx="button" [routerLink]="content.secondaryAction.route">
         {{ content.secondaryAction.label }}
       </a>
     </div>
 
     <div class="hero__metrics" aria-label="Indicadores institucionais">
       @for (metric of content.metrics; track metric.label) {
-        <div class="hero__metric" appScrollReveal [appScrollRevealDelay]="180" appScrollRevealOrigin="scale">
+        <div class="hero__metric" appPremiumFx="soft" appScrollReveal [appScrollRevealDelay]="180" appScrollRevealOrigin="scale">
           <strong>{{ metric.value }}</strong>
           <span>{{ metric.label }}</span>
         </div>
@@ -29,10 +29,10 @@
     </div>
   </div>
 
-  <div class="hero__visual reveal-up surface-panel">
+  <div class="hero__visual reveal-up surface-panel" appPremiumFx="soft">
     <div class="hero__orb hero__orb--one"></div>
     <div class="hero__orb hero__orb--two"></div>
-    <div class="hero__visual-badge">
+    <div class="hero__visual-badge" appPremiumFx="soft">
       <strong>Del Tecnologia</strong>
       <span>Engenharia Clínica de alto padrão</span>
     </div>

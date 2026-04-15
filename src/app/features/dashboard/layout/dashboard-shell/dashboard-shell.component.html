@@ -8,7 +8,7 @@
       [autoFocus]="false"
       (closedStart)="closeSidebar()"
     >
-      <div class="portal-shell__brand">
+      <div class="portal-shell__brand" appPremiumFx="soft">
         <div class="portal-shell__brand-mark">DT</div>
         <div>
           <span class="eyebrow">Portal Del</span>
@@ -21,6 +21,7 @@
         @for (item of navigationItems(); track item.route) {
           <a
             class="portal-shell__nav-item"
+            appPremiumFx="soft"
             [routerLink]="item.route"
             routerLinkActive="portal-shell__nav-item--active"
             [routerLinkActiveOptions]="{ exact: true }"
@@ -37,11 +38,11 @@
 
       <mat-divider></mat-divider>
 
-      <div class="portal-shell__support">
+      <div class="portal-shell__support" appPremiumFx="soft">
         <span class="eyebrow">Canal direto</span>
         <h3>Atendimento premium para sua operação.</h3>
         <p>Fale com a equipe Del para suporte técnico, planejamento ou alinhamentos estratégicos.</p>
-        <a mat-stroked-button [routerLink]="supportRoute" (click)="closeSidebar()">
+        <a mat-stroked-button appPremiumFx="button" [routerLink]="supportRoute" (click)="closeSidebar()">
           <mat-icon>forum</mat-icon>
           Acionar atendimento
         </a>
@@ -50,11 +51,11 @@
 
     <mat-sidenav-content class="portal-shell__content">
       <header class="portal-shell__topbar">
-        <button mat-icon-button type="button" class="portal-shell__menu-button" (click)="toggleSidebar()">
+        <button mat-icon-button type="button" class="portal-shell__menu-button" appPremiumFx="icon" (click)="toggleSidebar()">
           <mat-icon>menu</mat-icon>
         </button>
 
-        <a class="portal-shell__desktop-brand" [routerLink]="navigationItems()[0]?.route ?? '/area-del/visao-geral'">
+        <a class="portal-shell__desktop-brand" appPremiumFx="soft" [routerLink]="navigationItems()[0]?.route ?? '/area-del/visao-geral'">
           <div class="portal-shell__desktop-mark">DT</div>
           <div>
             <span class="eyebrow">Portal Del</span>
@@ -67,7 +68,7 @@
             <span>{{ user()?.name || 'Conta autenticada' }}</span>
             <strong>{{ user()?.roleLabel || 'Acesso corporativo' }}</strong>
           </div>
-          <button mat-stroked-button type="button" (click)="logout()">
+          <button mat-stroked-button type="button" appPremiumFx="button" (click)="logout()">
             <mat-icon>logout</mat-icon>
             Sair
           </button>

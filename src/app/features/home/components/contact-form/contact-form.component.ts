@@ -30,7 +30,8 @@ type ContactFormGroup = FormGroup<{
     MatInputModule,
     MatIconModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    PremiumCardDirective
   ],
   templateUrl: './contact-form.component.html',
   styleUrl: './contact-form.component.scss',

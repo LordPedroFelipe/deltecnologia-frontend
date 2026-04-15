@@ -10,15 +10,15 @@
       <div class="footer__links">
         <h3>Navegação</h3>
         @for (item of navItems; track item.route) {
-          <a [routerLink]="item.route">{{ item.label }}</a>
+          <a appPremiumFx="soft" [routerLink]="item.route">{{ item.label }}</a>
         }
       </div>
 
       <div class="footer__contact">
         <h3>Contato</h3>
-        <a href="tel:+554720337935">{{ phone }}</a>
-        <a href="https://wa.me/5547991027428" target="_blank" rel="noreferrer">{{ whatsapp }}</a>
-        <a href="mailto:contato@deltecnologia.com">{{ email }}</a>
+        <a appPremiumFx="soft" href="tel:+554720337935">{{ phone }}</a>
+        <a appPremiumFx="soft" href="https://wa.me/5547991027428" target="_blank" rel="noreferrer">{{ whatsapp }}</a>
+        <a appPremiumFx="soft" href="mailto:contato@deltecnologia.com">{{ email }}</a>
         <span>{{ address }}</span>
       </div>
     </section>
@@ -27,7 +27,7 @@
 
     <section class="footer__bottom">
       <p>© {{ currentYear }} {{ companyName }}. Todos os direitos reservados.</p>
-      <a mat-stroked-button class="footer__cta" routerLink="/contato">Falar com a Del Tecnologia</a>
+      <a mat-stroked-button class="footer__cta" appPremiumFx="button" routerLink="/contato">Falar com a Del Tecnologia</a>
     </section>
   </div>
 </footer>

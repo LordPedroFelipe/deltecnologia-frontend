@@ -6,52 +6,52 @@
   </div>
 
   <div class="register-page__shell page-shell">
-    <section class="register-page__brand surface-panel" appScrollReveal appScrollRevealOrigin="left">
+    <section class="register-page__brand surface-panel" appPremiumFx="soft" appScrollReveal appScrollRevealOrigin="left">
       <a class="register-page__brand-link" routerLink="/">
         <span class="register-page__brand-mark">DT</span>
         <div class="register-page__brand-copy">
           <span class="eyebrow">Cadastro corporativo</span>
           <h1>{{ company.shortName }}</h1>
-          <p>Uma jornada premium de entrada para clientes, parceiros e usuários da operação.</p>
+          <p>Uma jornada premium de entrada para clientes, parceiros e usuÃ¡rios da operaÃ§Ã£o.</p>
         </div>
       </a>
 
       <div class="register-page__content">
-        <h2>Crie uma conta com padrão institucional, pronta para relacionamento técnico e crescimento digital.</h2>
+        <h2>Crie uma conta com padrÃ£o institucional, pronta para relacionamento tÃ©cnico e crescimento digital.</h2>
         <p>
-          A estrutura de cadastro foi desenhada para acomodar empresas, responsáveis operacionais e
-          futuros fluxos de atendimento, dashboards, integrações e serviços digitais da Del Tecnologia.
+          A estrutura de cadastro foi desenhada para acomodar empresas, responsÃ¡veis operacionais e
+          futuros fluxos de atendimento, dashboards, integraÃ§Ãµes e serviÃ§os digitais da Del Tecnologia.
         </p>
 
         <div class="register-page__timeline">
-          <article class="register-page__step">
+          <article class="register-page__step" appPremiumFx="soft">
             <span>01</span>
             <div>
-              <strong>Identificação do perfil</strong>
-              <p>Defina se o cadastro representa um cliente institucional ou um usuário da operação.</p>
+              <strong>IdentificaÃ§Ã£o do perfil</strong>
+              <p>Defina se o cadastro representa um cliente institucional ou um usuÃ¡rio da operaÃ§Ã£o.</p>
             </div>
           </article>
 
-          <article class="register-page__step">
+          <article class="register-page__step" appPremiumFx="soft">
             <span>02</span>
             <div>
-              <strong>Dados corporativos e responsável</strong>
-              <p>Estruture o cadastro com informações reais da empresa, segmento e ponto de contato.</p>
+              <strong>Dados corporativos e responsÃ¡vel</strong>
+              <p>Estruture o cadastro com informaÃ§Ãµes reais da empresa, segmento e ponto de contato.</p>
             </div>
           </article>
 
-          <article class="register-page__step">
+          <article class="register-page__step" appPremiumFx="soft">
             <span>03</span>
             <div>
-              <strong>Ativação e evolução futura</strong>
-              <p>Base preparada para onboarding, permissões, suporte, integrações e relacionamento contínuo.</p>
+              <strong>AtivaÃ§Ã£o e evoluÃ§Ã£o futura</strong>
+              <p>Base preparada para onboarding, permissÃµes, suporte, integraÃ§Ãµes e relacionamento contÃ­nuo.</p>
             </div>
           </article>
         </div>
 
         <div class="register-page__chips">
           <span>Onboarding estruturado</span>
-          <span>Cadastro orientado a negócios</span>
+          <span>Cadastro orientado a negÃ³cios</span>
           <span>Preparado para backend</span>
         </div>
       </div>
@@ -69,7 +69,7 @@
           <label class="register-card__section-label">Tipo de cadastro</label>
           <mat-radio-group formControlName="profileType" class="register-card__radio-group">
             @for (option of profileOptions; track option.value) {
-              <label class="register-card__profile-option" [class.register-card__profile-option--active]="registerForm.controls.profileType.value === option.value">
+              <label class="register-card__profile-option" appPremiumFx="soft" [class.register-card__profile-option--active]="registerForm.controls.profileType.value === option.value">
                 <mat-radio-button [value]="option.value"></mat-radio-button>
                 <div>
                   <strong>{{ option.title }}</strong>
@@ -118,7 +118,7 @@
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label>Cargo / função</mat-label>
+            <mat-label>Cargo / funÃ§Ã£o</mat-label>
             <input matInput formControlName="jobTitle" />
             <mat-icon matPrefix>badge</mat-icon>
             @if (registerForm.controls.jobTitle.touched && registerForm.controls.jobTitle.invalid) {
@@ -140,7 +140,7 @@
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label>Porte da operação</mat-label>
+            <mat-label>Porte da operaÃ§Ã£o</mat-label>
             <mat-select formControlName="employeesRange">
               @for (employees of employeesOptions; track employees) {
                 <mat-option [value]="employees">{{ employees }}</mat-option>
@@ -161,7 +161,7 @@
               autocomplete="new-password"
             />
             <mat-icon matPrefix>lock</mat-icon>
-            <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
+            <button mat-icon-button matSuffix appPremiumFx="icon" type="button" (click)="togglePasswordVisibility()">
               <mat-icon>{{ showPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button>
             @if (registerForm.controls.password.touched && registerForm.controls.password.invalid) {
@@ -178,7 +178,7 @@
               autocomplete="new-password"
             />
             <mat-icon matPrefix>verified_user</mat-icon>
-            <button mat-icon-button matSuffix type="button" (click)="toggleConfirmPasswordVisibility()">
+            <button mat-icon-button matSuffix appPremiumFx="icon" type="button" (click)="toggleConfirmPasswordVisibility()">
               <mat-icon>{{ showConfirmPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button>
             @if (registerForm.controls.confirmPassword.touched && (registerForm.controls.confirmPassword.invalid || registerForm.hasError('passwordMismatch'))) {
@@ -196,11 +196,11 @@
           }
 
           <mat-checkbox formControlName="acceptUpdates">
-            Desejo receber novidades institucionais, atualizações e comunicações estratégicas da Del Tecnologia.
+            Desejo receber novidades institucionais, atualizaÃ§Ãµes e comunicaÃ§Ãµes estratÃ©gicas da Del Tecnologia.
           </mat-checkbox>
         </div>
 
-        <button mat-flat-button type="submit" class="register-card__submit" [disabled]="submitting()">
+        <button mat-flat-button type="submit" class="register-card__submit" appPremiumFx="button" [disabled]="submitting()">
           @if (submitting()) {
             <mat-spinner diameter="20"></mat-spinner>
           } @else {
@@ -211,10 +211,10 @@
       </form>
 
       <div class="register-card__footer">
-        <span>Já possui cadastro ou precisa redefinir seu acesso?</span>
+        <span>JÃ¡ possui cadastro ou precisa redefinir seu acesso?</span>
         <div class="register-card__footer-links">
-          <a [routerLink]="['/', 'login']">Entrar na área Del</a>
-          <a [routerLink]="['/', 'recuperar-senha']">Recuperar senha</a>
+          <a appPremiumFx="soft" [routerLink]="['/', 'login']">Entrar na Ã¡rea Del</a>
+          <a appPremiumFx="soft" [routerLink]="['/', 'recuperar-senha']">Recuperar senha</a>
         </div>
       </div>
     </section>

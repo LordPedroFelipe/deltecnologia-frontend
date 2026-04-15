@@ -3,10 +3,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { RouterLink } from '@angular/router';
 import { NavigationItem } from '../../../core/models/navigation-item.model';
+import { PremiumCardDirective } from '../../../shared/directives/premium-card.directive';
 
 @Component({
   selector: 'app-footer',
-  imports: [MatButtonModule, MatDividerModule, RouterLink],
+  imports: [MatButtonModule, MatDividerModule, RouterLink, PremiumCardDirective],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -11,7 +11,7 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
-  selector: '[appPremiumCard]',
+  selector: '[appPremiumCard], [appPremiumFx]',
   standalone: true
 })
 export class PremiumCardDirective implements OnInit {
@@ -20,6 +20,7 @@ export class PremiumCardDirective implements OnInit {
   private readonly platformId = inject(PLATFORM_ID);
 
   @Input() appPremiumCard = '';
+  @Input() appPremiumFx = '';
 
   private pointerInside = false;
   private readonly canAnimate =
@@ -32,6 +33,7 @@ export class PremiumCardDirective implements OnInit {
     const variantIndex = this.getVariantIndex(element);
 
     this.renderer.setAttribute(element, 'data-premium-card', '');
+    this.renderer.setAttribute(element, 'data-premium-fx', '');
     this.renderer.setAttribute(element, 'data-premium-index', `${variantIndex}`);
     this.renderer.addClass(element, 'premium-card-host');
     this.renderer.setStyle(element, '--card-variant-index', `${variantIndex}`);
@@ -40,8 +42,10 @@ export class PremiumCardDirective implements OnInit {
     this.renderer.setStyle(element, '--card-glow-opacity', `${0.16 + variantIndex * 0.03}`);
     this.renderer.setStyle(element, '--card-tilt-strength', `${7 + variantIndex}`);
 
-    if (this.appPremiumCard) {
-      this.renderer.setAttribute(element, 'data-premium-variant', this.appPremiumCard);
+    const variant = this.appPremiumCard || this.appPremiumFx;
+
+    if (variant) {
+      this.renderer.setAttribute(element, 'data-premium-variant', variant);
     }
   }
 

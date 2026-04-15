@@ -43,6 +43,7 @@
           mat-icon-button
           type="button"
           class="layout__close-button"
+          appPremiumFx="icon"
           (click)="closeMobileMenu()"
           aria-label="Fechar menu"
         >
@@ -56,6 +57,7 @@
             <a
               mat-list-item
               class="layout__mobile-link"
+              appPremiumFx="soft"
               [routerLink]="item.route"
               routerLinkActive="layout__mobile-link--active"
               [routerLinkActiveOptions]="{ exact: item.exact ?? item.route === '/' }"
@@ -69,18 +71,20 @@
         <mat-divider></mat-divider>
 
         <div class="layout__menu-contact">
-          <a mat-stroked-button class="layout__mobile-login" routerLink="/login">
+          <!--
+          <a mat-stroked-button class="layout__mobile-login" appPremiumFx="button" routerLink="/login">
             Entrar na área Del
           </a>
-          <a mat-flat-button class="layout__mobile-cta" routerLink="/contato">
+          -->
+          <a mat-flat-button class="layout__mobile-cta" appPremiumFx="button" routerLink="/contato">
             Falar com a Del
           </a>
-          <a mat-stroked-button class="layout__mobile-secondary" [href]="company.whatsappUrl" target="_blank" rel="noreferrer">
+          <a mat-stroked-button class="layout__mobile-secondary" appPremiumFx="button" [href]="company.whatsappUrl" target="_blank" rel="noreferrer">
             WhatsApp direto
           </a>
         </div>
 
-        <div class="layout__sidenav-meta">
+        <div class="layout__sidenav-meta" appPremiumFx="soft">
           <div>
             <strong>Telefone</strong>
             <a [href]="company.phoneUrl">{{ company.phone }}</a>

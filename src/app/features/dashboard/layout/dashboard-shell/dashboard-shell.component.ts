@@ -8,6 +8,7 @@ import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/rou
 import { PORTAL_NAVIGATION } from '../../../../core/constants/portal-navigation.constants';
 import { AppRoute } from '../../../../core/enums/app-route.enum';
 import { AuthService } from '../../../../core/services/auth.service';
+import { PremiumCardDirective } from '../../../../shared/directives/premium-card.directive';
 
 @Component({
   selector: 'app-dashboard-shell',
@@ -17,6 +18,7 @@ import { AuthService } from '../../../../core/services/auth.service';
     MatIconModule,
     MatListModule,
     MatSidenavModule,
+    PremiumCardDirective,
     RouterLink,
     RouterLinkActive,
     RouterOutlet

@@ -1,25 +1,25 @@
 <section class="section-block">
   <div class="page-shell">
     <app-section-title
-      eyebrow="Serviços"
+      eyebrow="ServiÃ§os"
       [title]="title"
       [description]="description"
     ></app-section-title>
 
-    <div class="services__spotlight surface-panel" appScrollReveal appScrollRevealOrigin="up">
+    <div class="services__spotlight surface-panel" appPremiumFx="soft" appScrollReveal appScrollRevealOrigin="up">
       <div class="services__spotlight-copy">
-        <span class="eyebrow">Execução especializada</span>
-        <h3>Uma operação desenhada para manter o parque tecnológico previsível, seguro e produtivo.</h3>
+        <span class="eyebrow">ExecuÃ§Ã£o especializada</span>
+        <h3>Uma operaÃ§Ã£o desenhada para manter o parque tecnolÃ³gico previsÃ­vel, seguro e produtivo.</h3>
         <p>
-          As imagens e a composição desta seção reforçam o posicionamento da Del como parceira técnica de alto nível,
-          com visão estruturada para manutenção, inventário, governança e evolução tecnológica.
+          As imagens e a composiÃ§Ã£o desta seÃ§Ã£o reforÃ§am o posicionamento da Del como parceira tÃ©cnica de alto nÃ­vel,
+          com visÃ£o estruturada para manutenÃ§Ã£o, inventÃ¡rio, governanÃ§a e evoluÃ§Ã£o tecnolÃ³gica.
         </p>
       </div>
 
       <div class="services__spotlight-media">
         <img
           [ngSrc]="spotlightImagePath"
-          alt="Equipe e recursos da Del Tecnologia atuando em serviços técnicos e engenharia clínica."
+          alt="Equipe e recursos da Del Tecnologia atuando em serviÃ§os tÃ©cnicos e engenharia clÃ­nica."
           width="1536"
           height="1024"
           sizes="(max-width: 1024px) 92vw, 36vw"
@@ -42,7 +42,7 @@
 
     @if (showCta) {
       <div class="services__cta" appScrollReveal [appScrollRevealDelay]="120">
-        <a mat-stroked-button class="services__cta-button" routerLink="/servicos">Ver portfólio completo</a>
+        <a mat-stroked-button class="services__cta-button" appPremiumFx="button" routerLink="/servicos">Ver portfólio completo</a>
       </div>
     }
   </div>

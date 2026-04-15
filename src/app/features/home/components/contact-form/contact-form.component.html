@@ -50,7 +50,7 @@
       }
     </mat-form-field>
 
-    <button mat-flat-button color="primary" type="submit" [disabled]="submitting()">
+    <button mat-flat-button color="primary" type="submit" appPremiumFx="button" [disabled]="submitting()">
       @if (submitting()) {
         <mat-spinner diameter="20"></mat-spinner>
       } @else {
