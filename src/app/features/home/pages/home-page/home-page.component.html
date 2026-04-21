@@ -1,71 +1,103 @@
-<app-hero-banner [content]="heroContent()"></app-hero-banner>
+<div class="home-page">
+  <div class="home-page__media" aria-hidden="true">
+    <video
+      #backgroundVideo
+      class="home-page__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="assets/images/hero-del.webp"
+      disablepictureinpicture
+      disableremoteplayback
+      (canplay)="onBackgroundVideoCanPlay()"
+      (loadeddata)="onBackgroundVideoCanPlay()"
+      (playing)="onBackgroundVideoPlaying()"
+      (pause)="onBackgroundVideoInterrupted()"
+      (waiting)="onBackgroundVideoInterrupted()"
+      (stalled)="onBackgroundVideoInterrupted()"
+      (suspend)="onBackgroundVideoInterrupted()"
+      (emptied)="onBackgroundVideoInterrupted()"
+    >
+      <source src="assets/videos/Del.mp4" type="video/mp4">
+      <source src="assets/videos/Del.mov" type="video/quicktime">
+    </video>
+    <div class="home-page__video-fallback" [class.home-page__video-fallback--hidden]="backgroundVideoReady()"></div>
+    <div class="home-page__overlay"></div>
+  </div>
 
-<section class="home-executive section-block--tight">
-  <div class="page-shell home-executive__grid">
-    <article class="home-executive__panel surface-panel" appScrollReveal appScrollRevealOrigin="left">
-      <span class="eyebrow">{{ i18n.t('pages.home.executive.eyebrow') }}</span>
-      <h2>{{ i18n.t('pages.home.executive.title') }}</h2>
-      <p>{{ i18n.t('pages.home.executive.description') }}</p>
-    </article>
+  <div class="home-page__content">
+    <app-hero-banner [content]="heroContent()"></app-hero-banner>
 
-    <article class="home-executive__stats" appScrollReveal [appScrollRevealDelay]="120" appScrollRevealOrigin="right">
-      @for (item of executiveStats(); track item.title) {
-        <div appScrollReveal [appScrollRevealDelay]="160">
-          <strong>{{ item.title }}</strong>
-          <span>{{ item.description }}</span>
+    <section class="home-executive section-block--tight">
+      <div class="page-shell home-executive__grid">
+        <article class="home-executive__panel surface-panel" appScrollReveal appScrollRevealOrigin="left">
+          <span class="eyebrow">{{ i18n.t('pages.home.executive.eyebrow') }}</span>
+          <h2>{{ i18n.t('pages.home.executive.title') }}</h2>
+          <p>{{ i18n.t('pages.home.executive.description') }}</p>
+        </article>
+
+        <article class="home-executive__stats" appScrollReveal [appScrollRevealDelay]="120" appScrollRevealOrigin="right">
+          @for (item of executiveStats(); track item.title) {
+            <div appScrollReveal [appScrollRevealDelay]="160">
+              <strong>{{ item.title }}</strong>
+              <span>{{ item.description }}</span>
+            </div>
+          }
+        </article>
+      </div>
+    </section>
+
+    <app-about-section [pillars]="aboutPillars()"></app-about-section>
+
+    <app-benefits-section [items]="benefits()"></app-benefits-section>
+
+    <app-services-section [services]="services()"></app-services-section>
+
+    <app-equipment-highlights-section [items]="equipmentHighlights()"></app-equipment-highlights-section>
+
+    <section class="home-differentials section-block">
+      <div class="page-shell" appScrollReveal>
+        <app-section-title
+          [eyebrow]="i18n.t('pages.home.differentials.eyebrow')"
+          [title]="i18n.t('pages.home.differentials.title')"
+          [description]="i18n.t('pages.home.differentials.description')"
+          align="center"
+        ></app-section-title>
+
+        <div class="home-differentials__grid">
+          @for (item of differentials(); track item.title) {
+            <app-differential-card [item]="item"></app-differential-card>
+          }
         </div>
-      }
-    </article>
+      </div>
+    </section>
+
+    <app-coverage-section [items]="coverage()"></app-coverage-section>
+
+    <section class="home-signature section-block--tight">
+      <div class="page-shell home-signature__content" appScrollReveal appScrollRevealOrigin="scale">
+        <span class="eyebrow">{{ i18n.t('pages.home.signature.eyebrow') }}</span>
+        <h2>{{ i18n.t('pages.home.signature.title') }}</h2>
+        <p>{{ i18n.t('pages.home.signature.description') }}</p>
+      </div>
+    </section>
+
+    <app-quick-contact-section [items]="quickContactItems()"></app-quick-contact-section>
+
+    <section class="section-block">
+      <div class="page-shell home-contact">
+        <div class="home-contact__intro" appScrollReveal appScrollRevealOrigin="left">
+          <app-section-title
+            [eyebrow]="i18n.t('pages.home.contact.eyebrow')"
+            [title]="i18n.t('pages.home.contact.title')"
+            [description]="i18n.t('pages.home.contact.description')"
+          ></app-section-title>
+        </div>
+
+        <app-contact-form></app-contact-form>
+      </div>
+    </section>
   </div>
-</section>
-
-<app-about-section [pillars]="aboutPillars()"></app-about-section>
-
-<app-benefits-section [items]="benefits()"></app-benefits-section>
-
-<app-services-section [services]="services()"></app-services-section>
-
-<app-equipment-highlights-section [items]="equipmentHighlights()"></app-equipment-highlights-section>
-
-<section class="home-differentials section-block">
-  <div class="page-shell" appScrollReveal>
-    <app-section-title
-      [eyebrow]="i18n.t('pages.home.differentials.eyebrow')"
-      [title]="i18n.t('pages.home.differentials.title')"
-      [description]="i18n.t('pages.home.differentials.description')"
-      align="center"
-    ></app-section-title>
-
-    <div class="home-differentials__grid">
-      @for (item of differentials(); track item.title) {
-        <app-differential-card [item]="item"></app-differential-card>
-      }
-    </div>
-  </div>
-</section>
-
-<app-coverage-section [items]="coverage()"></app-coverage-section>
-
-<section class="home-signature section-block--tight">
-  <div class="page-shell home-signature__content" appScrollReveal appScrollRevealOrigin="scale">
-    <span class="eyebrow">{{ i18n.t('pages.home.signature.eyebrow') }}</span>
-    <h2>{{ i18n.t('pages.home.signature.title') }}</h2>
-    <p>{{ i18n.t('pages.home.signature.description') }}</p>
-  </div>
-</section>
-
-<app-quick-contact-section [items]="quickContactItems()"></app-quick-contact-section>
-
-<section class="section-block">
-  <div class="page-shell home-contact">
-    <div class="home-contact__intro" appScrollReveal appScrollRevealOrigin="left">
-      <app-section-title
-        [eyebrow]="i18n.t('pages.home.contact.eyebrow')"
-        [title]="i18n.t('pages.home.contact.title')"
-        [description]="i18n.t('pages.home.contact.description')"
-      ></app-section-title>
-    </div>
-
-    <app-contact-form></app-contact-form>
-  </div>
-</section>
+</div>

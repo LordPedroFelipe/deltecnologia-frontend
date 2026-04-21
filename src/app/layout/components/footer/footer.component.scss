@@ -1,10 +1,14 @@
 .footer {
+  position: relative;
+  z-index: 2;
   margin-top: 4rem;
   color: var(--color-title);
   background:
-    radial-gradient(circle at top left, rgba(201, 210, 219, 0.26), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.65), transparent 24%),
-    linear-gradient(180deg, #f3f6f8 0%, #eef2f5 55%, #e7edf2 100%);
+    radial-gradient(circle at top left, rgba(201, 210, 219, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.42), transparent 24%),
+    linear-gradient(180deg, rgba(243, 246, 248, 0.86) 0%, rgba(238, 242, 245, 0.9) 55%, rgba(231, 237, 242, 0.92) 100%);
+  backdrop-filter: blur(18px);
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 .footer__shell {

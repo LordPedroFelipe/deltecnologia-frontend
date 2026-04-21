@@ -1,3 +1,57 @@
+.home-page {
+  position: relative;
+}
+
+.home-page__media {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-page__video,
+.home-page__video-fallback,
+.home-page__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.home-page__video {
+  z-index: 1;
+  object-fit: cover;
+  object-position: center center;
+  filter: saturate(0.9) contrast(1.04) brightness(0.66);
+  transform: scale(1.04);
+}
+
+.home-page__video-fallback {
+  z-index: 0;
+  background:
+    radial-gradient(circle at top left, rgba(201, 210, 219, 0.32), transparent 26%),
+    linear-gradient(135deg, rgba(15, 23, 42, 0.56), rgba(30, 41, 59, 0.7));
+  transition: opacity 260ms ease;
+}
+
+.home-page__video-fallback--hidden {
+  opacity: 0;
+}
+
+.home-page__overlay {
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(7, 13, 22, 0.18), rgba(7, 13, 22, 0.34) 30%, rgba(7, 13, 22, 0.56) 100%),
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 78% 12%, rgba(148, 163, 184, 0.18), transparent 18%);
+}
+
+.home-page__content {
+  position: relative;
+  z-index: 1;
+}
+
 .home-executive {
   margin-top: -0.8rem;
 }
@@ -61,9 +115,9 @@
   position: relative;
   color: var(--color-title);
   background:
-    radial-gradient(circle at top left, rgba(201, 210, 219, 0.28), transparent 22%),
-    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.64), transparent 22%),
-    linear-gradient(180deg, #f7f9fb 0%, #eef2f5 45%, #e8edf2 100%);
+    radial-gradient(circle at top left, rgba(201, 210, 219, 0.22), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.28), transparent 22%),
+    linear-gradient(180deg, rgba(247, 249, 251, 0.92) 0%, rgba(238, 242, 245, 0.9) 45%, rgba(232, 237, 242, 0.88) 100%);
 }
 
 .home-differentials::before {

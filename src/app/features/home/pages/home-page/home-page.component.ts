@@ -1,4 +1,17 @@
-import { ChangeDetectionStrategy, Component, computed, effect, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  ElementRef,
+  PLATFORM_ID,
+  afterNextRender,
+  computed,
+  effect,
+  inject,
+  signal,
+  viewChild
+} from '@angular/core';
 import { getSiteContent } from '../../../../core/i18n/localized-content';
 import { I18nService } from '../../../../core/services/i18n.service';
 import { SeoService } from '../../../../core/services/seo.service';
@@ -34,9 +47,14 @@ import { ServicesSectionComponent } from '../../components/services-section/serv
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomePageComponent {
+  private readonly destroyRef = inject(DestroyRef);
   private readonly seoService = inject(SeoService);
   protected readonly i18n = inject(I18nService);
+  private readonly platformId = inject(PLATFORM_ID);
+  private readonly isBrowser = isPlatformBrowser(this.platformId);
   private readonly siteContent = computed(() => getSiteContent(this.i18n.locale()));
+  private readonly backgroundVideoRef = viewChild<ElementRef<HTMLVideoElement>>('backgroundVideo');
+  protected readonly backgroundVideoReady = signal(false);
 
   protected readonly heroContent = computed(() => this.siteContent().hero);
   protected readonly aboutPillars = computed(() => this.siteContent().aboutPillars);
@@ -66,5 +84,59 @@ export class HomePageComponent {
         ]
       });
     });
+
+    if (this.isBrowser) {
+      afterNextRender(() => {
+        this.bindBackgroundVideoPlayback();
+      });
+    }
   }
+
+  protected onBackgroundVideoCanPlay(): void {
+    this.playBackgroundVideo();
+  }
+
+  protected onBackgroundVideoPlaying(): void {
+    this.backgroundVideoReady.set(true);
+  }
+
+  protected onBackgroundVideoInterrupted(): void {
+    this.backgroundVideoReady.set(false);
+    this.playBackgroundVideo();
+  }
+
+  private bindBackgroundVideoPlayback(): void {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        this.playBackgroundVideo();
+      }
+    };
+
+    window.addEventListener('pageshow', this.playBackgroundVideo, { passive: true });
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    this.destroyRef.onDestroy(() => {
+      window.removeEventListener('pageshow', this.playBackgroundVideo);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    });
+
+    this.playBackgroundVideo();
+  }
+
+  private readonly playBackgroundVideo = (): void => {
+    const video = this.backgroundVideoRef()?.nativeElement;
+    if (!video) {
+      return;
+    }
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    const playAttempt = video.play();
+    if (playAttempt) {
+      void playAttempt.catch(() => undefined);
+    }
+  };
 }
