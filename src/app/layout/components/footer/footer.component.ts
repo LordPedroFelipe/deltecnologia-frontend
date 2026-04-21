@@ -20,6 +20,7 @@ export class FooterComponent {
   @Input({ required: true }) navItems: readonly NavigationItem[] = [];
   @Input({ required: true }) phone = '';
   @Input({ required: true }) whatsapp = '';
+  @Input({ required: true }) whatsappUrl = '';
   @Input({ required: true }) email = '';
   @Input({ required: true }) address = '';
 

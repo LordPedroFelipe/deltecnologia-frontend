@@ -17,7 +17,7 @@
       <div class="footer__contact">
         <h3>{{ i18n.t('ui.labels.contact') }}</h3>
         <a appPremiumFx="soft" href="tel:+554720337935">{{ phone }}</a>
-        <a appPremiumFx="soft" href="https://wa.me/5547988054390" target="_blank" rel="noreferrer">{{ whatsapp }}</a>
+        <a appPremiumFx="soft" [href]="whatsappUrl" target="_blank" rel="noreferrer">{{ whatsapp }}</a>
         <a appPremiumFx="soft" href="mailto:contato@deltecnologia.com">{{ email }}</a>
         <span>{{ address }}</span>
       </div>
