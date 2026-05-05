@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs';
 import { COMPANY_INFO } from '../../../core/constants/company.constants';
+import { AppRoute } from '../../../core/enums/app-route.enum';
 import { getLocalizedCompanyContent, getPublicNavigation } from '../../../core/i18n/localized-content';
 import { I18nService } from '../../../core/services/i18n.service';
 import { FloatingWhatsappButtonComponent } from '../../../features/home/components/floating-whatsapp-button/floating-whatsapp-button.component';
@@ -41,9 +42,15 @@ export class MainLayoutComponent {
   private readonly router = inject(Router);
   private readonly destroyRef = inject(DestroyRef);
   protected readonly i18n = inject(I18nService);
+  private readonly currentUrl = signal(this.router.url);
 
   protected readonly company = COMPANY_INFO;
-  protected readonly navItems = computed(() => getPublicNavigation(this.i18n.locale()));
+  protected readonly landingBaseRoute = computed(() =>
+    this.currentUrl().startsWith(`/${AppRoute.PageTwo}`) ? `/${AppRoute.PageTwo}` : '/'
+  );
+  protected readonly navItems = computed(() =>
+    getPublicNavigation(this.i18n.locale(), this.landingBaseRoute())
+  );
   protected readonly companyCopy = computed(() => getLocalizedCompanyContent(this.i18n.locale()));
   protected readonly techParticles = [
     { id: 1, top: 12, left: 8, size: 6, delay: 0, duration: 12 },
@@ -64,6 +71,7 @@ export class MainLayoutComponent {
         takeUntilDestroyed(this.destroyRef)
       )
       .subscribe(() => {
+        this.currentUrl.set(this.router.url);
         this.mobileMenuOpen = false;
       });
   }

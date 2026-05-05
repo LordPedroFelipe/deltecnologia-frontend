@@ -53,7 +53,7 @@
 
       <div class="layout__sidenav-panel">
         <mat-nav-list class="layout__nav-list">
-          @for (item of navItems(); track item.route) {
+          @for (item of navItems(); track item.route + ':' + (item.fragment ?? '')) {
             <a
               mat-list-item
               class="layout__mobile-link"
@@ -72,7 +72,13 @@
         <mat-divider></mat-divider>
 
         <div class="layout__menu-contact">
-          <a mat-flat-button class="layout__mobile-cta" appPremiumFx="button" routerLink="/" fragment="contato">
+          <a
+            mat-flat-button
+            class="layout__mobile-cta"
+            appPremiumFx="button"
+            [routerLink]="landingBaseRoute()"
+            fragment="contato"
+          >
             {{ i18n.t('ui.actions.talkToDel') }}
           </a>
           <a
@@ -104,7 +110,9 @@
   <mat-sidenav-content>
     <app-header
       [companyName]="company.shortName"
+      [homeRoute]="landingBaseRoute()"
       [navItems]="navItems()"
+      [contactRoute]="landingBaseRoute()"
       (menuToggle)="toggleMobileMenu()"
     ></app-header>
 
@@ -121,6 +129,7 @@
       [whatsappUrl]="company.whatsappUrl"
       [email]="company.email"
       [address]="company.address"
+      [contactRoute]="landingBaseRoute()"
     ></app-footer>
 
     <app-floating-whatsapp-button [href]="company.whatsappUrl"></app-floating-whatsapp-button>

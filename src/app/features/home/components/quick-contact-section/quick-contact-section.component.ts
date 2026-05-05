@@ -2,6 +2,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { FigureSectionCopy } from '../../../../core/models/landing-copy.model';
 import { ContactChannelItem } from '../../../../core/models/info-card.model';
 import { I18nService } from '../../../../core/services/i18n.service';
 import { SectionTitleComponent } from '../../../../shared/components/section-title/section-title.component';
@@ -20,4 +21,5 @@ export class QuickContactSectionComponent {
   protected readonly imagePath = 'assets/images/del-06.png';
 
   @Input({ required: true }) items: readonly ContactChannelItem[] = [];
+  @Input() content?: FigureSectionCopy;
 }

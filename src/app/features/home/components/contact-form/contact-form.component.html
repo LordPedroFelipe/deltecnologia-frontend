@@ -1,14 +1,14 @@
 <mat-card class="contact-form" appearance="outlined">
   <div class="contact-form__header">
-    <span class="eyebrow">{{ i18n.t('pages.contactForm.eyebrow') }}</span>
-    <h3>{{ i18n.t('pages.contactForm.title') }}</h3>
-    <p>{{ i18n.t('pages.contactForm.description') }}</p>
+    <span class="eyebrow">{{ content?.eyebrow ?? i18n.t('pages.contactForm.eyebrow') }}</span>
+    <h3>{{ content?.title ?? i18n.t('pages.contactForm.title') }}</h3>
+    <p>{{ content?.description ?? i18n.t('pages.contactForm.description') }}</p>
   </div>
 
   <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
     <div class="contact-form__grid">
       <mat-form-field appearance="outline">
-        <mat-label>{{ i18n.t('pages.contactForm.fields.name') }}</mat-label>
+        <mat-label>{{ content?.fields?.name ?? i18n.t('pages.contactForm.fields.name') }}</mat-label>
         <input matInput formControlName="name" autocomplete="name">
         @if (form.controls.name.touched && form.controls.name.invalid) {
           <mat-error>{{ getErrorMessage('name') }}</mat-error>
@@ -16,7 +16,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>{{ i18n.t('pages.contactForm.fields.email') }}</mat-label>
+        <mat-label>{{ content?.fields?.email ?? i18n.t('pages.contactForm.fields.email') }}</mat-label>
         <input matInput formControlName="email" autocomplete="email">
         @if (form.controls.email.touched && form.controls.email.invalid) {
           <mat-error>{{ getErrorMessage('email') }}</mat-error>
@@ -24,7 +24,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>{{ i18n.t('pages.contactForm.fields.phone') }}</mat-label>
+        <mat-label>{{ content?.fields?.phone ?? i18n.t('pages.contactForm.fields.phone') }}</mat-label>
         <input matInput formControlName="phone" autocomplete="tel">
         @if (form.controls.phone.touched && form.controls.phone.invalid) {
           <mat-error>{{ getErrorMessage('phone') }}</mat-error>
@@ -32,7 +32,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>{{ i18n.t('pages.contactForm.fields.company') }}</mat-label>
+        <mat-label>{{ content?.fields?.company ?? i18n.t('pages.contactForm.fields.company') }}</mat-label>
         <input matInput formControlName="company" autocomplete="organization">
         @if (form.controls.company.touched && form.controls.company.invalid) {
           <mat-error>{{ getErrorMessage('company') }}</mat-error>
@@ -41,7 +41,7 @@
     </div>
 
     <mat-form-field appearance="outline" class="contact-form__message">
-      <mat-label>{{ i18n.t('pages.contactForm.fields.message') }}</mat-label>
+      <mat-label>{{ content?.fields?.message ?? i18n.t('pages.contactForm.fields.message') }}</mat-label>
       <textarea matInput rows="5" formControlName="message"></textarea>
       @if (form.controls.message.touched && form.controls.message.invalid) {
         <mat-error>{{ getErrorMessage('message') }}</mat-error>
@@ -54,7 +54,7 @@
       } @else {
         <mat-icon>send</mat-icon>
       }
-      {{ i18n.t('ui.actions.sendMessage') }}
+      {{ content?.submitLabel ?? i18n.t('ui.actions.sendMessage') }}
     </button>
   </form>
 </mat-card>

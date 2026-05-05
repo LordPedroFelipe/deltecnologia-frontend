@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
+import { ServicesSectionCopy } from '../../../../core/models/landing-copy.model';
 import { ServiceItem } from '../../../../core/models/service-item.model';
 import { I18nService } from '../../../../core/services/i18n.service';
 import { SectionTitleComponent } from '../../../../shared/components/section-title/section-title.component';
@@ -31,7 +32,11 @@ export class ServicesSectionComponent {
   protected readonly spotlightImagePath = 'assets/images/del-04.png';
 
   @Input({ required: true }) services: readonly ServiceItem[] = [];
+  @Input() eyebrow = '';
   @Input() title = '';
   @Input() description = '';
   @Input() showCta = true;
+  @Input() ctaRoute = '/servicos';
+  @Input() ctaFragment?: string;
+  @Input() content?: ServicesSectionCopy;
 }

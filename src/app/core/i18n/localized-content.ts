@@ -228,8 +228,17 @@ export function getLocalizedCompanyContent(locale: AppLocale): LocalizedCompanyC
       };
 }
 
-export function getPublicNavigation(locale: AppLocale): readonly NavigationItem[] {
-  return locale === 'en-US' ? enPublicNavigation : NAVIGATION_ITEMS;
+export function getPublicNavigation(locale: AppLocale, baseRoute = '/'): readonly NavigationItem[] {
+  const items = locale === 'en-US' ? enPublicNavigation : NAVIGATION_ITEMS;
+
+  if (baseRoute === '/') {
+    return items;
+  }
+
+  return items.map((item) => ({
+    ...item,
+    route: item.route === '/' ? baseRoute : item.route
+  }));
 }
 
 export function getPortalNavigation(locale: AppLocale): readonly PortalNavigationItem[] {

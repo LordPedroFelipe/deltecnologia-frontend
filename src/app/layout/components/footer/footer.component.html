@@ -9,7 +9,7 @@
 
       <div class="footer__links">
         <h3>{{ i18n.t('ui.labels.navigation') }}</h3>
-        @for (item of navItems; track item.route) {
+        @for (item of navItems; track item.route + ':' + (item.fragment ?? '')) {
           <a appPremiumFx="soft" [routerLink]="item.route" [fragment]="item.fragment">{{ item.label }}</a>
         }
       </div>
@@ -27,7 +27,13 @@
 
     <section class="footer__bottom">
       <p>{{ i18n.t('ui.status.copyright', { year: currentYear, companyName }) }}</p>
-      <a mat-stroked-button class="footer__cta" appPremiumFx="button" routerLink="/" fragment="contato">
+      <a
+        mat-stroked-button
+        class="footer__cta"
+        appPremiumFx="button"
+        [routerLink]="contactRoute"
+        [fragment]="contactFragment"
+      >
         {{ i18n.t('ui.actions.talkToDelFull') }}
       </a>
     </section>

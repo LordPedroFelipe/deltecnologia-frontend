@@ -3,9 +3,9 @@
     <div class="equipment-highlights__hero surface-panel" appScrollReveal appScrollRevealOrigin="up">
       <div class="equipment-highlights__copy">
         <app-section-title
-          [eyebrow]="i18n.t('pages.equipmentSection.eyebrow')"
-          [title]="i18n.t('pages.equipmentSection.title')"
-          [description]="i18n.t('pages.equipmentSection.description')"
+          [eyebrow]="content?.eyebrow ?? i18n.t('pages.equipmentSection.eyebrow')"
+          [title]="content?.title ?? i18n.t('pages.equipmentSection.title')"
+          [description]="content?.description ?? i18n.t('pages.equipmentSection.description')"
         ></app-section-title>
       </div>
 

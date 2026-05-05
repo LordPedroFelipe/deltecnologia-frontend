@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, Input, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { ContactFormCopy } from '../../../../core/models/landing-copy.model';
 import { ContactService } from '../../../../core/services/contact.service';
 import { I18nService } from '../../../../core/services/i18n.service';
 import { PremiumCardDirective } from '../../../../shared/directives/premium-card.directive';
@@ -47,6 +48,7 @@ export class ContactFormComponent {
   protected readonly i18n = inject(I18nService);
 
   protected readonly submitting = signal(false);
+  @Input() content?: ContactFormCopy;
   protected readonly form: ContactFormGroup = this.formBuilder.group({
     name: this.formBuilder.control('', [Validators.required, Validators.minLength(3)]),
     email: this.formBuilder.control('', [Validators.required, Validators.email]),

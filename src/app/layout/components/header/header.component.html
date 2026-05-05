@@ -1,6 +1,6 @@
 <header class="header">
   <mat-toolbar class="header__toolbar">
-    <a class="brand" routerLink="/" [attr.aria-label]="i18n.t('ui.accessibility.goToHomepage')">
+    <a class="brand" [routerLink]="homeRoute" [attr.aria-label]="i18n.t('ui.accessibility.goToHomepage')">
       <span class="brand__mark">
         <img
           ngSrc="assets/images/del-02.png"
@@ -19,7 +19,7 @@
     </a>
 
     <nav class="header__nav" [attr.aria-label]="i18n.t('ui.accessibility.mainNavigation')">
-      @for (item of navItems; track item.route) {
+      @for (item of navItems; track item.route + ':' + (item.fragment ?? '')) {
         <a
           class="header__link"
           appPremiumFx="soft"

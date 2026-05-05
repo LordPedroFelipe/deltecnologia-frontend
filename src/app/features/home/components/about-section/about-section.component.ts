@@ -1,5 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, Input, inject } from '@angular/core';
+import { AboutSectionCopy } from '../../../../core/models/landing-copy.model';
 import { InfoCardItem } from '../../../../core/models/info-card.model';
 import { I18nService } from '../../../../core/services/i18n.service';
 import { InfoCardComponent } from '../../../../shared/components/info-card/info-card.component';
@@ -19,4 +20,5 @@ export class AboutSectionComponent {
 
   @Input({ required: true }) pillars: readonly InfoCardItem[] = [];
   @Input() compact = false;
+  @Input() content?: AboutSectionCopy;
 }

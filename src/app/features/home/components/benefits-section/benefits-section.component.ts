@@ -14,6 +14,7 @@ import { SectionTitleComponent } from '../../../../shared/components/section-tit
 export class BenefitsSectionComponent {
   protected readonly i18n = inject(I18nService);
   @Input({ required: true }) items: readonly InfoCardItem[] = [];
+  @Input() eyebrow = '';
   @Input() title = '';
   @Input() description = '';
 }

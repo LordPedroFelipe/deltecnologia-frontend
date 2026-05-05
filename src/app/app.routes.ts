@@ -94,6 +94,13 @@ export const routes: Routes = [
           )
       },
       {
+        path: AppRoute.PageTwo,
+        loadComponent: () =>
+          import('./features/home/pages/page-two/page-two.component').then(
+            (component) => component.PageTwoComponent
+          )
+      },
+      {
         path: AppRoute.About,
         loadComponent: () =>
           import('./features/about/pages/about-page/about-page.component').then(

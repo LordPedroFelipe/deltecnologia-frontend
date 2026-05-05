@@ -17,11 +17,12 @@ import { PremiumCardDirective } from '../../../shared/directives/premium-card.di
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  protected readonly contactRoute = '/';
-  protected readonly contactFragment = 'contato';
   protected readonly i18n = inject(I18nService);
 
   @Input({ required: true }) navItems: readonly NavigationItem[] = [];
   @Input({ required: true }) companyName = '';
+  @Input() homeRoute = '/';
+  @Input() contactRoute = '/';
+  @Input() contactFragment = 'contato';
   @Output() readonly menuToggle = new EventEmitter<void>();
 }

@@ -2,29 +2,29 @@
   <div class="page-shell about">
     <div class="about__intro">
       <app-section-title
-        [eyebrow]="i18n.t('pages.aboutSection.eyebrow')"
-        [title]="i18n.t('pages.aboutSection.title')"
-        [description]="i18n.t('pages.aboutSection.description')"
+        [eyebrow]="content?.eyebrow ?? i18n.t('pages.aboutSection.eyebrow')"
+        [title]="content?.title ?? i18n.t('pages.aboutSection.title')"
+        [description]="content?.description ?? i18n.t('pages.aboutSection.description')"
       ></app-section-title>
 
       <div class="about__content surface-panel">
-        <p>{{ i18n.t('pages.aboutSection.paragraphs.0') }}</p>
-        <p>{{ i18n.t('pages.aboutSection.paragraphs.1') }}</p>
+        <p>{{ content?.paragraphs?.[0] ?? i18n.t('pages.aboutSection.paragraphs.0') }}</p>
+        <p>{{ content?.paragraphs?.[1] ?? i18n.t('pages.aboutSection.paragraphs.1') }}</p>
       </div>
     </div>
 
     <figure class="about__visual surface-panel" appScrollReveal appScrollRevealOrigin="right">
       <img
         [ngSrc]="imagePath"
-        [alt]="i18n.t('pages.aboutSection.figureAlt')"
+        [alt]="content?.figure?.alt ?? i18n.t('pages.aboutSection.figureAlt')"
         width="1536"
         height="1024"
         sizes="(max-width: 1024px) 92vw, 40vw"
         loading="lazy"
       >
       <figcaption>
-        <strong>{{ i18n.t('pages.aboutSection.figureTitle') }}</strong>
-        <span>{{ i18n.t('pages.aboutSection.figureDescription') }}</span>
+        <strong>{{ content?.figure?.title ?? i18n.t('pages.aboutSection.figureTitle') }}</strong>
+        <span>{{ content?.figure?.description ?? i18n.t('pages.aboutSection.figureDescription') }}</span>
       </figcaption>
     </figure>
 

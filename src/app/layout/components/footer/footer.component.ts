@@ -23,6 +23,8 @@ export class FooterComponent {
   @Input({ required: true }) whatsappUrl = '';
   @Input({ required: true }) email = '';
   @Input({ required: true }) address = '';
+  @Input() contactRoute = '/';
+  @Input() contactFragment = 'contato';
 
   readonly currentYear = new Date().getFullYear();
 }

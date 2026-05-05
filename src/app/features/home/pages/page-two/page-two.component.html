@@ -1,0 +1,121 @@
+<div class="home-page">
+  <div class="home-page__media" aria-hidden="true">
+    <video
+      #backgroundVideo
+      class="home-page__video"
+      autoplay
+      muted
+      loop
+      playsinline
+      webkit-playsinline="true"
+      preload="auto"
+      poster="assets/images/hero-del.webp"
+      disablepictureinpicture
+      disableremoteplayback
+      (loadedmetadata)="onBackgroundVideoCanPlay()"
+      (canplay)="onBackgroundVideoCanPlay()"
+      (loadeddata)="onBackgroundVideoCanPlay()"
+      (playing)="onBackgroundVideoPlaying()"
+      (pause)="onBackgroundVideoInterrupted()"
+      (waiting)="onBackgroundVideoInterrupted()"
+      (stalled)="onBackgroundVideoInterrupted()"
+      (suspend)="onBackgroundVideoInterrupted()"
+      (emptied)="onBackgroundVideoInterrupted()"
+      (error)="onBackgroundVideoError()"
+    >
+      <source src="assets/videos/Del.mp4" type="video/mp4">
+      <source src="assets/videos/Del.mov" type="video/quicktime">
+    </video>
+    <div class="home-page__video-fallback" [class.home-page__video-fallback--hidden]="backgroundVideoReady()"></div>
+    <div class="home-page__overlay"></div>
+  </div>
+
+  <div class="home-page__content">
+    <app-hero-banner [content]="heroContent()"></app-hero-banner>
+
+    <section class="home-executive section-block--tight">
+      <div class="page-shell home-executive__grid">
+        <article class="home-executive__panel surface-panel" appScrollReveal appScrollRevealOrigin="left">
+          <span class="eyebrow">{{ executive().eyebrow }}</span>
+          <h2>{{ executive().title }}</h2>
+          <p>{{ executive().description }}</p>
+        </article>
+
+        <article class="home-executive__stats" appScrollReveal [appScrollRevealDelay]="120" appScrollRevealOrigin="right">
+          @for (item of executive().stats; track item.title) {
+            <div appScrollReveal [appScrollRevealDelay]="160">
+              <strong>{{ item.title }}</strong>
+              <span>{{ item.description }}</span>
+            </div>
+          }
+        </article>
+      </div>
+    </section>
+
+    <app-about-section [pillars]="aboutPillars()" [content]="about()"></app-about-section>
+
+    <app-benefits-section
+      [items]="benefits().items"
+      [eyebrow]="benefits().eyebrow"
+      [title]="benefits().title"
+      [description]="benefits().description"
+    ></app-benefits-section>
+
+    <app-services-section
+      [services]="services().items"
+      [content]="services().section"
+      [title]="services().section.title"
+      [description]="services().section.description"
+      [ctaRoute]="heroContent().primaryAction.route"
+      ctaFragment="contato"
+    ></app-services-section>
+
+    <app-equipment-highlights-section
+      [items]="equipment().items"
+      [content]="equipment().section"
+    ></app-equipment-highlights-section>
+
+    <section class="home-differentials section-block">
+      <div class="page-shell" appScrollReveal>
+        <app-section-title
+          [eyebrow]="differentials().section.eyebrow"
+          [title]="differentials().section.title"
+          [description]="differentials().section.description"
+          align="center"
+        ></app-section-title>
+
+        <div class="home-differentials__grid">
+          @for (item of differentials().items; track item.title) {
+            <app-differential-card [item]="item"></app-differential-card>
+          }
+        </div>
+      </div>
+    </section>
+
+    <app-coverage-section [items]="coverage().items" [content]="coverage().section"></app-coverage-section>
+
+    <section class="home-signature section-block--tight">
+      <div class="page-shell home-signature__content" appScrollReveal appScrollRevealOrigin="scale">
+        <span class="eyebrow">{{ signature().eyebrow }}</span>
+        <h2>{{ signature().title }}</h2>
+        <p>{{ signature().description }}</p>
+      </div>
+    </section>
+
+    <app-quick-contact-section [items]="quickContact().items" [content]="quickContact().section"></app-quick-contact-section>
+
+    <section id="contato" class="section-block">
+      <div class="page-shell home-contact">
+        <div class="home-contact__intro" appScrollReveal appScrollRevealOrigin="left">
+          <app-section-title
+            [eyebrow]="contact().intro.eyebrow"
+            [title]="contact().intro.title"
+            [description]="contact().intro.description"
+          ></app-section-title>
+        </div>
+
+        <app-contact-form [content]="contact().form"></app-contact-form>
+      </div>
+    </section>
+  </div>
+</div>

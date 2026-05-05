@@ -1,22 +1,22 @@
 <section id="servicos" class="section-block">
   <div class="page-shell">
     <app-section-title
-      [eyebrow]="i18n.t('pages.servicesSection.eyebrow')"
+      [eyebrow]="eyebrow || content?.eyebrow || i18n.t('pages.servicesSection.eyebrow')"
       [title]="title || i18n.t('pages.servicesSection.defaultTitle')"
       [description]="description || i18n.t('pages.servicesSection.defaultDescription')"
     ></app-section-title>
 
     <div class="services__spotlight surface-panel" appPremiumFx="soft" appScrollReveal appScrollRevealOrigin="up">
       <div class="services__spotlight-copy">
-        <span class="eyebrow">{{ i18n.t('pages.servicesSection.spotlightEyebrow') }}</span>
-        <h3>{{ i18n.t('pages.servicesSection.spotlightTitle') }}</h3>
-        <p>{{ i18n.t('pages.servicesSection.spotlightDescription') }}</p>
+        <span class="eyebrow">{{ content?.spotlightEyebrow ?? i18n.t('pages.servicesSection.spotlightEyebrow') }}</span>
+        <h3>{{ content?.spotlightTitle ?? i18n.t('pages.servicesSection.spotlightTitle') }}</h3>
+        <p>{{ content?.spotlightDescription ?? i18n.t('pages.servicesSection.spotlightDescription') }}</p>
       </div>
 
       <div class="services__spotlight-media">
         <img
           [ngSrc]="spotlightImagePath"
-          [alt]="i18n.t('pages.servicesSection.spotlightAlt')"
+          [alt]="content?.spotlightAlt ?? i18n.t('pages.servicesSection.spotlightAlt')"
           width="1536"
           height="1024"
           sizes="(max-width: 1024px) 92vw, 36vw"
@@ -39,8 +39,14 @@
 
     @if (showCta) {
       <div class="services__cta" appScrollReveal [appScrollRevealDelay]="120">
-        <a mat-stroked-button class="services__cta-button" appPremiumFx="button" routerLink="/servicos">
-          {{ i18n.t('ui.actions.viewPortfolio') }}
+        <a
+          mat-stroked-button
+          class="services__cta-button"
+          appPremiumFx="button"
+          [routerLink]="ctaRoute"
+          [fragment]="ctaFragment"
+        >
+          {{ content?.ctaLabel ?? i18n.t('ui.actions.viewPortfolio') }}
         </a>
       </div>
     }

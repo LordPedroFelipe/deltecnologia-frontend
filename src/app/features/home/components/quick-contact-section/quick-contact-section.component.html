@@ -1,9 +1,9 @@
 <section class="section-block quick-contact">
   <div class="page-shell">
     <app-section-title
-      [eyebrow]="i18n.t('pages.quickContactSection.eyebrow')"
-      [title]="i18n.t('pages.quickContactSection.title')"
-      [description]="i18n.t('pages.quickContactSection.description')"
+      [eyebrow]="content?.eyebrow ?? i18n.t('pages.quickContactSection.eyebrow')"
+      [title]="content?.title ?? i18n.t('pages.quickContactSection.title')"
+      [description]="content?.description ?? i18n.t('pages.quickContactSection.description')"
     ></app-section-title>
 
     <div class="quick-contact__layout">
@@ -23,15 +23,15 @@
       <figure class="quick-contact__visual surface-panel" appScrollReveal appScrollRevealOrigin="right">
         <img
           [ngSrc]="imagePath"
-          [alt]="i18n.t('pages.quickContactSection.figureAlt')"
+          [alt]="content?.figure?.alt ?? i18n.t('pages.quickContactSection.figureAlt')"
           width="1536"
           height="1024"
           sizes="(max-width: 1024px) 92vw, 38vw"
           loading="lazy"
         >
         <figcaption>
-          <strong>{{ i18n.t('pages.quickContactSection.figureTitle') }}</strong>
-          <span>{{ i18n.t('pages.quickContactSection.figureDescription') }}</span>
+          <strong>{{ content?.figure?.title ?? i18n.t('pages.quickContactSection.figureTitle') }}</strong>
+          <span>{{ content?.figure?.description ?? i18n.t('pages.quickContactSection.figureDescription') }}</span>
         </figcaption>
       </figure>
     </div>
