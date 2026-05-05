@@ -16,7 +16,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
 })
 export class AboutSectionComponent {
   protected readonly i18n = inject(I18nService);
-  protected readonly imagePath = 'assets/images/del-10.png';
+  protected readonly imagePath = 'assets/images/del-07.png';
 
   @Input({ required: true }) pillars: readonly InfoCardItem[] = [];
   @Input() compact = false;

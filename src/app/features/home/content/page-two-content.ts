@@ -99,7 +99,7 @@ const ptBrContent: PageTwoLandingContent = {
       { value: '100%', label: 'Portfólio customizável por operação' },
       { value: 'Desde 2013', label: 'Experiência dedicada ao setor de saúde' }
     ],
-    imagePath: 'assets/images/del-07.png',
+    imagePath: 'assets/images/del-10.png',
     imageAlt: 'Equipe técnica da Del Tecnologia em ambiente institucional de engenharia clínica.'
   },
   executive: {
